@@ -16,7 +16,7 @@ namespace interface_wms
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new interfaceWMS());
+            Application.Run(new CadastroFornecedores());
         }
     }
 }
