@@ -62,11 +62,7 @@ namespace interface_wms
             this.textBox_razaoSocial = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.textBox_telefoneFixo = new System.Windows.Forms.TextBox();
-            this.textBox_prazoSaida = new System.Windows.Forms.TextBox();
-            this.label15 = new System.Windows.Forms.Label();
-            this.textBox_prazoEntrega = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
             this.textBox_telefoneCelular = new System.Windows.Forms.TextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.label10 = new System.Windows.Forms.Label();
@@ -110,6 +106,8 @@ namespace interface_wms
             this.label8 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
@@ -121,8 +119,17 @@ namespace interface_wms
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.button9 = new System.Windows.Forms.Button();
             this.button10 = new System.Windows.Forms.Button();
-            this.codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label14 = new System.Windows.Forms.Label();
+            this.textBox_email = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.textBox_nomeContato = new System.Windows.Forms.TextBox();
+            this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.label21 = new System.Windows.Forms.Label();
+            this.textBox_dadosAdicionais1 = new System.Windows.Forms.TextBox();
+            this.label32 = new System.Windows.Forms.Label();
+            this.textBox_dadosAdicionais2 = new System.Windows.Forms.TextBox();
+            this.label33 = new System.Windows.Forms.Label();
+            this.textBox_dadosAdicionais3 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.menu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -137,6 +144,7 @@ namespace interface_wms
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            this.tabPage5.SuspendLayout();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -161,7 +169,7 @@ namespace interface_wms
             this.exibirToolStripMenuItem});
             this.menu.Location = new System.Drawing.Point(0, 0);
             this.menu.Name = "menu";
-            this.menu.Size = new System.Drawing.Size(1887, 33);
+            this.menu.Size = new System.Drawing.Size(1887, 36);
             this.menu.TabIndex = 1;
             this.menu.Text = "menuStrip1";
             // 
@@ -174,7 +182,7 @@ namespace interface_wms
             this.cadastroDeFornecedoresToolStripMenuItem});
             this.arquivoToolStripMenuItem.ForeColor = System.Drawing.SystemColors.GrayText;
             this.arquivoToolStripMenuItem.Name = "arquivoToolStripMenuItem";
-            this.arquivoToolStripMenuItem.Size = new System.Drawing.Size(90, 29);
+            this.arquivoToolStripMenuItem.Size = new System.Drawing.Size(90, 30);
             this.arquivoToolStripMenuItem.Text = "Sistema";
             this.arquivoToolStripMenuItem.Click += new System.EventHandler(this.arquivoToolStripMenuItem_Click);
             // 
@@ -208,7 +216,7 @@ namespace interface_wms
             this.permissõesToolStripMenuItem});
             this.editarToolStripMenuItem.ForeColor = System.Drawing.SystemColors.GrayText;
             this.editarToolStripMenuItem.Name = "editarToolStripMenuItem";
-            this.editarToolStripMenuItem.Size = new System.Drawing.Size(88, 29);
+            this.editarToolStripMenuItem.Size = new System.Drawing.Size(88, 30);
             this.editarToolStripMenuItem.Text = "Usuário";
             // 
             // optionToolStripMenuItem1
@@ -229,7 +237,7 @@ namespace interface_wms
             this.optionToolStripMenuItem2});
             this.exibirToolStripMenuItem.ForeColor = System.Drawing.SystemColors.GrayText;
             this.exibirToolStripMenuItem.Name = "exibirToolStripMenuItem";
-            this.exibirToolStripMenuItem.Size = new System.Drawing.Size(74, 29);
+            this.exibirToolStripMenuItem.Size = new System.Drawing.Size(74, 30);
             this.exibirToolStripMenuItem.Text = "Ajuda";
             // 
             // optionToolStripMenuItem2
@@ -399,6 +407,7 @@ namespace interface_wms
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage4);
+            this.tabControl1.Controls.Add(this.tabPage5);
             this.tabControl1.Location = new System.Drawing.Point(56, 175);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -408,6 +417,10 @@ namespace interface_wms
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.textBox_nomeContato);
+            this.tabPage1.Controls.Add(this.label15);
+            this.tabPage1.Controls.Add(this.textBox_email);
+            this.tabPage1.Controls.Add(this.label14);
             this.tabPage1.Controls.Add(this.label7);
             this.tabPage1.Controls.Add(this.textBox4);
             this.tabPage1.Controls.Add(this.label20);
@@ -415,11 +428,7 @@ namespace interface_wms
             this.tabPage1.Controls.Add(this.textBox_razaoSocial);
             this.tabPage1.Controls.Add(this.label11);
             this.tabPage1.Controls.Add(this.textBox_telefoneFixo);
-            this.tabPage1.Controls.Add(this.textBox_prazoSaida);
-            this.tabPage1.Controls.Add(this.label15);
-            this.tabPage1.Controls.Add(this.textBox_prazoEntrega);
             this.tabPage1.Controls.Add(this.label13);
-            this.tabPage1.Controls.Add(this.label14);
             this.tabPage1.Controls.Add(this.textBox_telefoneCelular);
             this.tabPage1.Location = new System.Drawing.Point(4, 34);
             this.tabPage1.Name = "tabPage1";
@@ -508,38 +517,6 @@ namespace interface_wms
             this.textBox_telefoneFixo.Text = "(00) 0000-00000";
             this.textBox_telefoneFixo.TextChanged += new System.EventHandler(this.textBox_telefoneFixo_TextChanged);
             // 
-            // textBox_prazoSaida
-            // 
-            this.textBox_prazoSaida.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox_prazoSaida.Location = new System.Drawing.Point(888, 39);
-            this.textBox_prazoSaida.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.textBox_prazoSaida.Name = "textBox_prazoSaida";
-            this.textBox_prazoSaida.Size = new System.Drawing.Size(138, 31);
-            this.textBox_prazoSaida.TabIndex = 18;
-            this.textBox_prazoSaida.Text = "dd/mm/aaaa";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Segoe UI Semibold", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(891, 12);
-            this.label15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(120, 21);
-            this.label15.TabIndex = 17;
-            this.label15.Text = "Prazo de Saída:";
-            // 
-            // textBox_prazoEntrega
-            // 
-            this.textBox_prazoEntrega.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox_prazoEntrega.Location = new System.Drawing.Point(741, 39);
-            this.textBox_prazoEntrega.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.textBox_prazoEntrega.Name = "textBox_prazoEntrega";
-            this.textBox_prazoEntrega.Size = new System.Drawing.Size(139, 31);
-            this.textBox_prazoEntrega.TabIndex = 16;
-            this.textBox_prazoEntrega.Text = "dd/mm/aaaa";
-            this.textBox_prazoEntrega.TextChanged += new System.EventHandler(this.textBox9_TextChanged);
-            // 
             // label13
             // 
             this.label13.AutoSize = true;
@@ -551,17 +528,6 @@ namespace interface_wms
             this.label13.TabIndex = 13;
             this.label13.Text = "Telefone Celular:";
             this.label13.Click += new System.EventHandler(this.label13_Click);
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Segoe UI Semibold", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(743, 12);
-            this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(137, 21);
-            this.label14.TabIndex = 15;
-            this.label14.Text = "Prazo de Entrega:";
             // 
             // textBox_telefoneCelular
             // 
@@ -1066,6 +1032,20 @@ namespace interface_wms
             this.dataGridView1.TabIndex = 16;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
+            // codigo
+            // 
+            this.codigo.HeaderText = "Código";
+            this.codigo.MinimumWidth = 8;
+            this.codigo.Name = "codigo";
+            this.codigo.Width = 150;
+            // 
+            // Nome
+            // 
+            this.Nome.HeaderText = "Nome";
+            this.Nome.MinimumWidth = 8;
+            this.Nome.Name = "Nome";
+            this.Nome.Width = 150;
+            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.button2);
@@ -1232,19 +1212,120 @@ namespace interface_wms
             this.button10.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button10.UseVisualStyleBackColor = false;
             // 
-            // codigo
+            // label14
             // 
-            this.codigo.HeaderText = "Código";
-            this.codigo.MinimumWidth = 8;
-            this.codigo.Name = "codigo";
-            this.codigo.Width = 150;
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Segoe UI Semibold", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(738, 12);
+            this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(62, 21);
+            this.label14.TabIndex = 15;
+            this.label14.Text = "E-mail: ";
             // 
-            // Nome
+            // textBox_email
             // 
-            this.Nome.HeaderText = "Nome";
-            this.Nome.MinimumWidth = 8;
-            this.Nome.Name = "Nome";
-            this.Nome.Width = 150;
+            this.textBox_email.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_email.Location = new System.Drawing.Point(742, 38);
+            this.textBox_email.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.textBox_email.Name = "textBox_email";
+            this.textBox_email.Size = new System.Drawing.Size(192, 31);
+            this.textBox_email.TabIndex = 16;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Segoe UI Semibold", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(938, 12);
+            this.label15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(122, 21);
+            this.label15.TabIndex = 17;
+            this.label15.Text = "Nome Contato:";
+            // 
+            // textBox_nomeContato
+            // 
+            this.textBox_nomeContato.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_nomeContato.Location = new System.Drawing.Point(942, 38);
+            this.textBox_nomeContato.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.textBox_nomeContato.Name = "textBox_nomeContato";
+            this.textBox_nomeContato.Size = new System.Drawing.Size(192, 31);
+            this.textBox_nomeContato.TabIndex = 18;
+            // 
+            // tabPage5
+            // 
+            this.tabPage5.Controls.Add(this.label33);
+            this.tabPage5.Controls.Add(this.textBox_dadosAdicionais3);
+            this.tabPage5.Controls.Add(this.label32);
+            this.tabPage5.Controls.Add(this.textBox_dadosAdicionais2);
+            this.tabPage5.Controls.Add(this.label21);
+            this.tabPage5.Controls.Add(this.textBox_dadosAdicionais1);
+            this.tabPage5.Location = new System.Drawing.Point(4, 34);
+            this.tabPage5.Name = "tabPage5";
+            this.tabPage5.Size = new System.Drawing.Size(1180, 140);
+            this.tabPage5.TabIndex = 4;
+            this.tabPage5.Text = "Dados Adicionais";
+            this.tabPage5.UseVisualStyleBackColor = true;
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Segoe UI Semibold", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label21.Location = new System.Drawing.Point(15, 18);
+            this.label21.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(145, 21);
+            this.label21.TabIndex = 19;
+            this.label21.Text = "Dados Adicionais 1";
+            // 
+            // textBox_dadosAdicionais1
+            // 
+            this.textBox_dadosAdicionais1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_dadosAdicionais1.Location = new System.Drawing.Point(13, 44);
+            this.textBox_dadosAdicionais1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.textBox_dadosAdicionais1.Name = "textBox_dadosAdicionais1";
+            this.textBox_dadosAdicionais1.Size = new System.Drawing.Size(147, 31);
+            this.textBox_dadosAdicionais1.TabIndex = 20;
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Font = new System.Drawing.Font("Segoe UI Semibold", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label32.Location = new System.Drawing.Point(172, 18);
+            this.label32.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(148, 21);
+            this.label32.TabIndex = 21;
+            this.label32.Text = "Dados Adicionais 2";
+            // 
+            // textBox_dadosAdicionais2
+            // 
+            this.textBox_dadosAdicionais2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_dadosAdicionais2.Location = new System.Drawing.Point(170, 44);
+            this.textBox_dadosAdicionais2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.textBox_dadosAdicionais2.Name = "textBox_dadosAdicionais2";
+            this.textBox_dadosAdicionais2.Size = new System.Drawing.Size(147, 31);
+            this.textBox_dadosAdicionais2.TabIndex = 22;
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.Font = new System.Drawing.Font("Segoe UI Semibold", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label33.Location = new System.Drawing.Point(328, 18);
+            this.label33.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(148, 21);
+            this.label33.TabIndex = 23;
+            this.label33.Text = "Dados Adicionais 3";
+            // 
+            // textBox_dadosAdicionais3
+            // 
+            this.textBox_dadosAdicionais3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_dadosAdicionais3.Location = new System.Drawing.Point(326, 44);
+            this.textBox_dadosAdicionais3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.textBox_dadosAdicionais3.Name = "textBox_dadosAdicionais3";
+            this.textBox_dadosAdicionais3.Size = new System.Drawing.Size(147, 31);
+            this.textBox_dadosAdicionais3.TabIndex = 24;
             // 
             // CadastroFornecedores
             // 
@@ -1297,6 +1378,8 @@ namespace interface_wms
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
+            this.tabPage5.ResumeLayout(false);
+            this.tabPage5.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1337,10 +1420,6 @@ namespace interface_wms
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox textBox_buscaFornecedor;
-        private System.Windows.Forms.TextBox textBox_prazoSaida;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.TextBox textBox_prazoEntrega;
-        private System.Windows.Forms.Label label14;
         private System.Windows.Forms.TextBox textBox_telefoneCelular;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TextBox textBox_telefoneFixo;
@@ -1398,6 +1477,17 @@ namespace interface_wms
         private System.Windows.Forms.TextBox textBox_digitoContaCorrente;
         private System.Windows.Forms.DataGridViewTextBoxColumn codigo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nome;
+        private System.Windows.Forms.TextBox textBox_nomeContato;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.TextBox textBox_email;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.TabPage tabPage5;
+        private System.Windows.Forms.Label label33;
+        private System.Windows.Forms.TextBox textBox_dadosAdicionais3;
+        private System.Windows.Forms.Label label32;
+        private System.Windows.Forms.TextBox textBox_dadosAdicionais2;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.TextBox textBox_dadosAdicionais1;
     }
 }
 
