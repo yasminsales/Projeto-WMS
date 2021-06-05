@@ -93,7 +93,7 @@ namespace interface_wms
             this.label24 = new System.Windows.Forms.Label();
             this.textBox_inscricaoMunicipal = new System.Windows.Forms.TextBox();
             this.label25 = new System.Windows.Forms.Label();
-            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.textBox_inscricaoEstadual = new System.Windows.Forms.TextBox();
             this.label26 = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
             this.tabPage4 = new System.Windows.Forms.TabPage();
@@ -167,7 +167,7 @@ namespace interface_wms
             this.exibirToolStripMenuItem});
             this.menu.Location = new System.Drawing.Point(0, 0);
             this.menu.Name = "menu";
-            this.menu.Size = new System.Drawing.Size(1887, 33);
+            this.menu.Size = new System.Drawing.Size(1887, 36);
             this.menu.TabIndex = 1;
             this.menu.Text = "menuStrip1";
             // 
@@ -180,9 +180,8 @@ namespace interface_wms
             this.cadastroDeFornecedoresToolStripMenuItem});
             this.arquivoToolStripMenuItem.ForeColor = System.Drawing.SystemColors.GrayText;
             this.arquivoToolStripMenuItem.Name = "arquivoToolStripMenuItem";
-            this.arquivoToolStripMenuItem.Size = new System.Drawing.Size(90, 29);
+            this.arquivoToolStripMenuItem.Size = new System.Drawing.Size(90, 32);
             this.arquivoToolStripMenuItem.Text = "Sistema";
-            this.arquivoToolStripMenuItem.Click += new System.EventHandler(this.arquivoToolStripMenuItem_Click);
             // 
             // optionToolStripMenuItem
             // 
@@ -214,7 +213,7 @@ namespace interface_wms
             this.permissõesToolStripMenuItem});
             this.editarToolStripMenuItem.ForeColor = System.Drawing.SystemColors.GrayText;
             this.editarToolStripMenuItem.Name = "editarToolStripMenuItem";
-            this.editarToolStripMenuItem.Size = new System.Drawing.Size(88, 29);
+            this.editarToolStripMenuItem.Size = new System.Drawing.Size(88, 32);
             this.editarToolStripMenuItem.Text = "Usuário";
             // 
             // optionToolStripMenuItem1
@@ -235,7 +234,7 @@ namespace interface_wms
             this.optionToolStripMenuItem2});
             this.exibirToolStripMenuItem.ForeColor = System.Drawing.SystemColors.GrayText;
             this.exibirToolStripMenuItem.Name = "exibirToolStripMenuItem";
-            this.exibirToolStripMenuItem.Size = new System.Drawing.Size(74, 29);
+            this.exibirToolStripMenuItem.Size = new System.Drawing.Size(74, 32);
             this.exibirToolStripMenuItem.Text = "Ajuda";
             // 
             // optionToolStripMenuItem2
@@ -255,7 +254,6 @@ namespace interface_wms
             this.label1.Size = new System.Drawing.Size(167, 25);
             this.label1.TabIndex = 2;
             this.label1.Text = "Usuário: 00000000";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
@@ -365,6 +363,7 @@ namespace interface_wms
             this.button4.Text = "Salvar";
             this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button5
             // 
@@ -411,7 +410,6 @@ namespace interface_wms
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(1188, 178);
             this.tabControl1.TabIndex = 22;
-            this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
             // 
             // tabPage1
             // 
@@ -492,11 +490,10 @@ namespace interface_wms
             this.textBox_cnpj.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_cnpj.Location = new System.Drawing.Point(35, 39);
             this.textBox_cnpj.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.textBox_cnpj.MaxLength = 14;
             this.textBox_cnpj.Name = "textBox_cnpj";
             this.textBox_cnpj.Size = new System.Drawing.Size(192, 31);
             this.textBox_cnpj.TabIndex = 6;
-            this.textBox_cnpj.Text = "00.000.000/0000-00";
-            this.textBox_cnpj.TextChanged += new System.EventHandler(this.textBox4_TextChanged_1);
             // 
             // label20
             // 
@@ -508,7 +505,6 @@ namespace interface_wms
             this.label20.Size = new System.Drawing.Size(104, 21);
             this.label20.TabIndex = 7;
             this.label20.Text = "Razão Social:";
-            this.label20.Click += new System.EventHandler(this.label10_Click);
             // 
             // label_razaoSocial
             // 
@@ -520,7 +516,6 @@ namespace interface_wms
             this.label_razaoSocial.Size = new System.Drawing.Size(104, 21);
             this.label_razaoSocial.TabIndex = 7;
             this.label_razaoSocial.Text = "Razão Social:";
-            this.label_razaoSocial.Click += new System.EventHandler(this.label10_Click);
             // 
             // textBox_razaoSocial
             // 
@@ -530,7 +525,6 @@ namespace interface_wms
             this.textBox_razaoSocial.Name = "textBox_razaoSocial";
             this.textBox_razaoSocial.Size = new System.Drawing.Size(192, 31);
             this.textBox_razaoSocial.TabIndex = 8;
-            this.textBox_razaoSocial.TextChanged += new System.EventHandler(this.textBox_razaoSocial_TextChanged);
             // 
             // label11
             // 
@@ -542,7 +536,6 @@ namespace interface_wms
             this.label11.Size = new System.Drawing.Size(111, 21);
             this.label11.TabIndex = 9;
             this.label11.Text = "Telefone Fixo:";
-            this.label11.Click += new System.EventHandler(this.label11_Click);
             // 
             // textBox_telefoneFixo
             // 
@@ -552,8 +545,6 @@ namespace interface_wms
             this.textBox_telefoneFixo.Name = "textBox_telefoneFixo";
             this.textBox_telefoneFixo.Size = new System.Drawing.Size(146, 31);
             this.textBox_telefoneFixo.TabIndex = 10;
-            this.textBox_telefoneFixo.Text = "(00) 0000-00000";
-            this.textBox_telefoneFixo.TextChanged += new System.EventHandler(this.textBox_telefoneFixo_TextChanged);
             // 
             // label13
             // 
@@ -565,7 +556,6 @@ namespace interface_wms
             this.label13.Size = new System.Drawing.Size(132, 21);
             this.label13.TabIndex = 13;
             this.label13.Text = "Telefone Celular:";
-            this.label13.Click += new System.EventHandler(this.label13_Click);
             // 
             // textBox_telefoneCelular
             // 
@@ -575,8 +565,6 @@ namespace interface_wms
             this.textBox_telefoneCelular.Name = "textBox_telefoneCelular";
             this.textBox_telefoneCelular.Size = new System.Drawing.Size(142, 31);
             this.textBox_telefoneCelular.TabIndex = 14;
-            this.textBox_telefoneCelular.Text = "(00) 0000-00000";
-            this.textBox_telefoneCelular.TextChanged += new System.EventHandler(this.textBox_telefoneCelular_TextChanged);
             // 
             // tabPage2
             // 
@@ -634,7 +622,6 @@ namespace interface_wms
             this.Estado.Size = new System.Drawing.Size(63, 21);
             this.Estado.TabIndex = 19;
             this.Estado.Text = "Estado:";
-            this.Estado.Click += new System.EventHandler(this.Estado_Click);
             // 
             // textBox_cep
             // 
@@ -644,8 +631,6 @@ namespace interface_wms
             this.textBox_cep.Name = "textBox_cep";
             this.textBox_cep.Size = new System.Drawing.Size(192, 31);
             this.textBox_cep.TabIndex = 20;
-            this.textBox_cep.Text = "00000-000";
-            this.textBox_cep.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             // 
             // label12
             // 
@@ -758,7 +743,7 @@ namespace interface_wms
             this.tabPage3.Controls.Add(this.label24);
             this.tabPage3.Controls.Add(this.textBox_inscricaoMunicipal);
             this.tabPage3.Controls.Add(this.label25);
-            this.tabPage3.Controls.Add(this.textBox9);
+            this.tabPage3.Controls.Add(this.textBox_inscricaoEstadual);
             this.tabPage3.Controls.Add(this.label26);
             this.tabPage3.Controls.Add(this.label27);
             this.tabPage3.Location = new System.Drawing.Point(4, 34);
@@ -872,15 +857,14 @@ namespace interface_wms
             this.label25.TabIndex = 29;
             this.label25.Text = "Inscrição Municipal:";
             // 
-            // textBox9
+            // textBox_inscricaoEstadual
             // 
-            this.textBox9.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox9.Location = new System.Drawing.Point(681, 44);
-            this.textBox9.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(139, 31);
-            this.textBox9.TabIndex = 28;
-            this.textBox9.Text = "000.000.000.000";
+            this.textBox_inscricaoEstadual.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_inscricaoEstadual.Location = new System.Drawing.Point(681, 44);
+            this.textBox_inscricaoEstadual.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.textBox_inscricaoEstadual.Name = "textBox_inscricaoEstadual";
+            this.textBox_inscricaoEstadual.Size = new System.Drawing.Size(139, 31);
+            this.textBox_inscricaoEstadual.TabIndex = 28;
             // 
             // label26
             // 
@@ -903,7 +887,6 @@ namespace interface_wms
             this.label27.Size = new System.Drawing.Size(143, 21);
             this.label27.TabIndex = 27;
             this.label27.Text = "Inscrição Estadual:";
-            this.label27.Click += new System.EventHandler(this.label27_Click);
             // 
             // tabPage4
             // 
@@ -921,7 +904,6 @@ namespace interface_wms
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Dados Bancários";
             this.tabPage4.UseVisualStyleBackColor = true;
-            this.tabPage4.Click += new System.EventHandler(this.tabPage4_Click);
             // 
             // comboBox_banco
             // 
@@ -1092,7 +1074,6 @@ namespace interface_wms
             this.textBox_nomeFantasia.Name = "textBox_nomeFantasia";
             this.textBox_nomeFantasia.Size = new System.Drawing.Size(998, 31);
             this.textBox_nomeFantasia.TabIndex = 4;
-            this.textBox_nomeFantasia.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // textBox1
             // 
@@ -1117,7 +1098,6 @@ namespace interface_wms
             this.label8.Size = new System.Drawing.Size(183, 32);
             this.label8.TabIndex = 2;
             this.label8.Text = "Nome Fantasia:";
-            this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
             // label6
             // 
@@ -1203,7 +1183,6 @@ namespace interface_wms
             this.label9.Size = new System.Drawing.Size(309, 21);
             this.label9.TabIndex = 5;
             this.label9.Text = "Digite o código ou nome do fornecedor:";
-            this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
             // textBox_buscaFornecedor
             // 
@@ -1445,7 +1424,7 @@ namespace interface_wms
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.TextBox textBox_inscricaoMunicipal;
         private System.Windows.Forms.Label label25;
-        private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.TextBox textBox_inscricaoEstadual;
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.ComboBox comboBox_segmento;
