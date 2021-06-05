@@ -55,8 +55,12 @@ namespace interface_wms
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.textBox_nomeContato = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.textBox_email = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textBox_cnpj = new System.Windows.Forms.TextBox();
             this.label20 = new System.Windows.Forms.Label();
             this.label_razaoSocial = new System.Windows.Forms.Label();
             this.textBox_razaoSocial = new System.Windows.Forms.TextBox();
@@ -87,7 +91,7 @@ namespace interface_wms
             this.textBox_aliquota = new System.Windows.Forms.TextBox();
             this.label23 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.textBox_inscricaoMunicipal = new System.Windows.Forms.TextBox();
             this.label25 = new System.Windows.Forms.Label();
             this.textBox9 = new System.Windows.Forms.TextBox();
             this.label26 = new System.Windows.Forms.Label();
@@ -101,13 +105,18 @@ namespace interface_wms
             this.textBox_contaCorrente = new System.Windows.Forms.TextBox();
             this.label31 = new System.Windows.Forms.Label();
             this.textBox_digitoContaCorrente = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.label33 = new System.Windows.Forms.Label();
+            this.textBox_dadosAdicionais3 = new System.Windows.Forms.TextBox();
+            this.label32 = new System.Windows.Forms.Label();
+            this.textBox_dadosAdicionais2 = new System.Windows.Forms.TextBox();
+            this.label21 = new System.Windows.Forms.Label();
+            this.textBox_dadosAdicionais1 = new System.Windows.Forms.TextBox();
+            this.textBox_nomeFantasia = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
@@ -119,17 +128,6 @@ namespace interface_wms
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.button9 = new System.Windows.Forms.Button();
             this.button10 = new System.Windows.Forms.Button();
-            this.label14 = new System.Windows.Forms.Label();
-            this.textBox_email = new System.Windows.Forms.TextBox();
-            this.label15 = new System.Windows.Forms.Label();
-            this.textBox_nomeContato = new System.Windows.Forms.TextBox();
-            this.tabPage5 = new System.Windows.Forms.TabPage();
-            this.label21 = new System.Windows.Forms.Label();
-            this.textBox_dadosAdicionais1 = new System.Windows.Forms.TextBox();
-            this.label32 = new System.Windows.Forms.Label();
-            this.textBox_dadosAdicionais2 = new System.Windows.Forms.TextBox();
-            this.label33 = new System.Windows.Forms.Label();
-            this.textBox_dadosAdicionais3 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.menu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -141,10 +139,10 @@ namespace interface_wms
             this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.tabPage4.SuspendLayout();
+            this.tabPage5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
-            this.tabPage5.SuspendLayout();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -169,7 +167,7 @@ namespace interface_wms
             this.exibirToolStripMenuItem});
             this.menu.Location = new System.Drawing.Point(0, 0);
             this.menu.Name = "menu";
-            this.menu.Size = new System.Drawing.Size(1887, 36);
+            this.menu.Size = new System.Drawing.Size(1887, 33);
             this.menu.TabIndex = 1;
             this.menu.Text = "menuStrip1";
             // 
@@ -182,7 +180,7 @@ namespace interface_wms
             this.cadastroDeFornecedoresToolStripMenuItem});
             this.arquivoToolStripMenuItem.ForeColor = System.Drawing.SystemColors.GrayText;
             this.arquivoToolStripMenuItem.Name = "arquivoToolStripMenuItem";
-            this.arquivoToolStripMenuItem.Size = new System.Drawing.Size(90, 30);
+            this.arquivoToolStripMenuItem.Size = new System.Drawing.Size(90, 29);
             this.arquivoToolStripMenuItem.Text = "Sistema";
             this.arquivoToolStripMenuItem.Click += new System.EventHandler(this.arquivoToolStripMenuItem_Click);
             // 
@@ -216,7 +214,7 @@ namespace interface_wms
             this.permissõesToolStripMenuItem});
             this.editarToolStripMenuItem.ForeColor = System.Drawing.SystemColors.GrayText;
             this.editarToolStripMenuItem.Name = "editarToolStripMenuItem";
-            this.editarToolStripMenuItem.Size = new System.Drawing.Size(88, 30);
+            this.editarToolStripMenuItem.Size = new System.Drawing.Size(88, 29);
             this.editarToolStripMenuItem.Text = "Usuário";
             // 
             // optionToolStripMenuItem1
@@ -237,7 +235,7 @@ namespace interface_wms
             this.optionToolStripMenuItem2});
             this.exibirToolStripMenuItem.ForeColor = System.Drawing.SystemColors.GrayText;
             this.exibirToolStripMenuItem.Name = "exibirToolStripMenuItem";
-            this.exibirToolStripMenuItem.Size = new System.Drawing.Size(74, 30);
+            this.exibirToolStripMenuItem.Size = new System.Drawing.Size(74, 29);
             this.exibirToolStripMenuItem.Text = "Ajuda";
             // 
             // optionToolStripMenuItem2
@@ -386,7 +384,7 @@ namespace interface_wms
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.tabControl1);
-            this.groupBox1.Controls.Add(this.textBox2);
+            this.groupBox1.Controls.Add(this.textBox_nomeFantasia);
             this.groupBox1.Controls.Add(this.textBox1);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.label6);
@@ -422,7 +420,7 @@ namespace interface_wms
             this.tabPage1.Controls.Add(this.textBox_email);
             this.tabPage1.Controls.Add(this.label14);
             this.tabPage1.Controls.Add(this.label7);
-            this.tabPage1.Controls.Add(this.textBox4);
+            this.tabPage1.Controls.Add(this.textBox_cnpj);
             this.tabPage1.Controls.Add(this.label20);
             this.tabPage1.Controls.Add(this.label_razaoSocial);
             this.tabPage1.Controls.Add(this.textBox_razaoSocial);
@@ -438,6 +436,46 @@ namespace interface_wms
             this.tabPage1.Text = "Dados Cadastrais";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // textBox_nomeContato
+            // 
+            this.textBox_nomeContato.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_nomeContato.Location = new System.Drawing.Point(942, 38);
+            this.textBox_nomeContato.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.textBox_nomeContato.Name = "textBox_nomeContato";
+            this.textBox_nomeContato.Size = new System.Drawing.Size(192, 31);
+            this.textBox_nomeContato.TabIndex = 18;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Segoe UI Semibold", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(938, 12);
+            this.label15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(122, 21);
+            this.label15.TabIndex = 17;
+            this.label15.Text = "Nome Contato:";
+            // 
+            // textBox_email
+            // 
+            this.textBox_email.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_email.Location = new System.Drawing.Point(742, 38);
+            this.textBox_email.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.textBox_email.Name = "textBox_email";
+            this.textBox_email.Size = new System.Drawing.Size(192, 31);
+            this.textBox_email.TabIndex = 16;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Segoe UI Semibold", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(738, 12);
+            this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(62, 21);
+            this.label14.TabIndex = 15;
+            this.label14.Text = "E-mail: ";
+            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -449,16 +487,16 @@ namespace interface_wms
             this.label7.TabIndex = 5;
             this.label7.Text = "CNPJ:";
             // 
-            // textBox4
+            // textBox_cnpj
             // 
-            this.textBox4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(35, 39);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(192, 31);
-            this.textBox4.TabIndex = 6;
-            this.textBox4.Text = "00.000.000/0000-00";
-            this.textBox4.TextChanged += new System.EventHandler(this.textBox4_TextChanged_1);
+            this.textBox_cnpj.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_cnpj.Location = new System.Drawing.Point(35, 39);
+            this.textBox_cnpj.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.textBox_cnpj.Name = "textBox_cnpj";
+            this.textBox_cnpj.Size = new System.Drawing.Size(192, 31);
+            this.textBox_cnpj.TabIndex = 6;
+            this.textBox_cnpj.Text = "00.000.000/0000-00";
+            this.textBox_cnpj.TextChanged += new System.EventHandler(this.textBox4_TextChanged_1);
             // 
             // label20
             // 
@@ -718,7 +756,7 @@ namespace interface_wms
             this.tabPage3.Controls.Add(this.textBox_aliquota);
             this.tabPage3.Controls.Add(this.label23);
             this.tabPage3.Controls.Add(this.label24);
-            this.tabPage3.Controls.Add(this.textBox8);
+            this.tabPage3.Controls.Add(this.textBox_inscricaoMunicipal);
             this.tabPage3.Controls.Add(this.label25);
             this.tabPage3.Controls.Add(this.textBox9);
             this.tabPage3.Controls.Add(this.label26);
@@ -814,14 +852,14 @@ namespace interface_wms
             this.label24.TabIndex = 23;
             this.label24.Text = "Situação ICMS:";
             // 
-            // textBox8
+            // textBox_inscricaoMunicipal
             // 
-            this.textBox8.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox8.Location = new System.Drawing.Point(828, 44);
-            this.textBox8.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(138, 31);
-            this.textBox8.TabIndex = 30;
+            this.textBox_inscricaoMunicipal.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_inscricaoMunicipal.Location = new System.Drawing.Point(828, 44);
+            this.textBox_inscricaoMunicipal.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.textBox_inscricaoMunicipal.Name = "textBox_inscricaoMunicipal";
+            this.textBox_inscricaoMunicipal.Size = new System.Drawing.Size(138, 31);
+            this.textBox_inscricaoMunicipal.TabIndex = 30;
             // 
             // label25
             // 
@@ -971,15 +1009,90 @@ namespace interface_wms
             this.textBox_digitoContaCorrente.Size = new System.Drawing.Size(142, 31);
             this.textBox_digitoContaCorrente.TabIndex = 22;
             // 
-            // textBox2
+            // tabPage5
             // 
-            this.textBox2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(194, 122);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(998, 31);
-            this.textBox2.TabIndex = 4;
-            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            this.tabPage5.Controls.Add(this.label33);
+            this.tabPage5.Controls.Add(this.textBox_dadosAdicionais3);
+            this.tabPage5.Controls.Add(this.label32);
+            this.tabPage5.Controls.Add(this.textBox_dadosAdicionais2);
+            this.tabPage5.Controls.Add(this.label21);
+            this.tabPage5.Controls.Add(this.textBox_dadosAdicionais1);
+            this.tabPage5.Location = new System.Drawing.Point(4, 34);
+            this.tabPage5.Name = "tabPage5";
+            this.tabPage5.Size = new System.Drawing.Size(1180, 140);
+            this.tabPage5.TabIndex = 4;
+            this.tabPage5.Text = "Dados Adicionais";
+            this.tabPage5.UseVisualStyleBackColor = true;
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.Font = new System.Drawing.Font("Segoe UI Semibold", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label33.Location = new System.Drawing.Point(328, 18);
+            this.label33.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(148, 21);
+            this.label33.TabIndex = 23;
+            this.label33.Text = "Dados Adicionais 3";
+            // 
+            // textBox_dadosAdicionais3
+            // 
+            this.textBox_dadosAdicionais3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_dadosAdicionais3.Location = new System.Drawing.Point(326, 44);
+            this.textBox_dadosAdicionais3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.textBox_dadosAdicionais3.Name = "textBox_dadosAdicionais3";
+            this.textBox_dadosAdicionais3.Size = new System.Drawing.Size(147, 31);
+            this.textBox_dadosAdicionais3.TabIndex = 24;
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Font = new System.Drawing.Font("Segoe UI Semibold", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label32.Location = new System.Drawing.Point(172, 18);
+            this.label32.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(148, 21);
+            this.label32.TabIndex = 21;
+            this.label32.Text = "Dados Adicionais 2";
+            // 
+            // textBox_dadosAdicionais2
+            // 
+            this.textBox_dadosAdicionais2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_dadosAdicionais2.Location = new System.Drawing.Point(170, 44);
+            this.textBox_dadosAdicionais2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.textBox_dadosAdicionais2.Name = "textBox_dadosAdicionais2";
+            this.textBox_dadosAdicionais2.Size = new System.Drawing.Size(147, 31);
+            this.textBox_dadosAdicionais2.TabIndex = 22;
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Segoe UI Semibold", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label21.Location = new System.Drawing.Point(15, 18);
+            this.label21.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(145, 21);
+            this.label21.TabIndex = 19;
+            this.label21.Text = "Dados Adicionais 1";
+            // 
+            // textBox_dadosAdicionais1
+            // 
+            this.textBox_dadosAdicionais1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_dadosAdicionais1.Location = new System.Drawing.Point(13, 44);
+            this.textBox_dadosAdicionais1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.textBox_dadosAdicionais1.Name = "textBox_dadosAdicionais1";
+            this.textBox_dadosAdicionais1.Size = new System.Drawing.Size(147, 31);
+            this.textBox_dadosAdicionais1.TabIndex = 20;
+            // 
+            // textBox_nomeFantasia
+            // 
+            this.textBox_nomeFantasia.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_nomeFantasia.Location = new System.Drawing.Point(194, 122);
+            this.textBox_nomeFantasia.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.textBox_nomeFantasia.Name = "textBox_nomeFantasia";
+            this.textBox_nomeFantasia.Size = new System.Drawing.Size(998, 31);
+            this.textBox_nomeFantasia.TabIndex = 4;
+            this.textBox_nomeFantasia.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // textBox1
             // 
@@ -1021,9 +1134,6 @@ namespace interface_wms
             // 
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.codigo,
-            this.Nome});
             this.dataGridView1.Location = new System.Drawing.Point(27, 82);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dataGridView1.Name = "dataGridView1";
@@ -1031,20 +1141,6 @@ namespace interface_wms
             this.dataGridView1.Size = new System.Drawing.Size(1434, 152);
             this.dataGridView1.TabIndex = 16;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // codigo
-            // 
-            this.codigo.HeaderText = "Código";
-            this.codigo.MinimumWidth = 8;
-            this.codigo.Name = "codigo";
-            this.codigo.Width = 150;
-            // 
-            // Nome
-            // 
-            this.Nome.HeaderText = "Nome";
-            this.Nome.MinimumWidth = 8;
-            this.Nome.Name = "Nome";
-            this.Nome.Width = 150;
             // 
             // groupBox2
             // 
@@ -1095,6 +1191,7 @@ namespace interface_wms
             this.button1.Text = "Buscar";
             this.button1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.Consultar);
             // 
             // label9
             // 
@@ -1212,121 +1309,6 @@ namespace interface_wms
             this.button10.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button10.UseVisualStyleBackColor = false;
             // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Segoe UI Semibold", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(738, 12);
-            this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(62, 21);
-            this.label14.TabIndex = 15;
-            this.label14.Text = "E-mail: ";
-            // 
-            // textBox_email
-            // 
-            this.textBox_email.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox_email.Location = new System.Drawing.Point(742, 38);
-            this.textBox_email.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.textBox_email.Name = "textBox_email";
-            this.textBox_email.Size = new System.Drawing.Size(192, 31);
-            this.textBox_email.TabIndex = 16;
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Segoe UI Semibold", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(938, 12);
-            this.label15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(122, 21);
-            this.label15.TabIndex = 17;
-            this.label15.Text = "Nome Contato:";
-            // 
-            // textBox_nomeContato
-            // 
-            this.textBox_nomeContato.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox_nomeContato.Location = new System.Drawing.Point(942, 38);
-            this.textBox_nomeContato.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.textBox_nomeContato.Name = "textBox_nomeContato";
-            this.textBox_nomeContato.Size = new System.Drawing.Size(192, 31);
-            this.textBox_nomeContato.TabIndex = 18;
-            // 
-            // tabPage5
-            // 
-            this.tabPage5.Controls.Add(this.label33);
-            this.tabPage5.Controls.Add(this.textBox_dadosAdicionais3);
-            this.tabPage5.Controls.Add(this.label32);
-            this.tabPage5.Controls.Add(this.textBox_dadosAdicionais2);
-            this.tabPage5.Controls.Add(this.label21);
-            this.tabPage5.Controls.Add(this.textBox_dadosAdicionais1);
-            this.tabPage5.Location = new System.Drawing.Point(4, 34);
-            this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Size = new System.Drawing.Size(1180, 140);
-            this.tabPage5.TabIndex = 4;
-            this.tabPage5.Text = "Dados Adicionais";
-            this.tabPage5.UseVisualStyleBackColor = true;
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("Segoe UI Semibold", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(15, 18);
-            this.label21.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(145, 21);
-            this.label21.TabIndex = 19;
-            this.label21.Text = "Dados Adicionais 1";
-            // 
-            // textBox_dadosAdicionais1
-            // 
-            this.textBox_dadosAdicionais1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox_dadosAdicionais1.Location = new System.Drawing.Point(13, 44);
-            this.textBox_dadosAdicionais1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.textBox_dadosAdicionais1.Name = "textBox_dadosAdicionais1";
-            this.textBox_dadosAdicionais1.Size = new System.Drawing.Size(147, 31);
-            this.textBox_dadosAdicionais1.TabIndex = 20;
-            // 
-            // label32
-            // 
-            this.label32.AutoSize = true;
-            this.label32.Font = new System.Drawing.Font("Segoe UI Semibold", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label32.Location = new System.Drawing.Point(172, 18);
-            this.label32.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(148, 21);
-            this.label32.TabIndex = 21;
-            this.label32.Text = "Dados Adicionais 2";
-            // 
-            // textBox_dadosAdicionais2
-            // 
-            this.textBox_dadosAdicionais2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox_dadosAdicionais2.Location = new System.Drawing.Point(170, 44);
-            this.textBox_dadosAdicionais2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.textBox_dadosAdicionais2.Name = "textBox_dadosAdicionais2";
-            this.textBox_dadosAdicionais2.Size = new System.Drawing.Size(147, 31);
-            this.textBox_dadosAdicionais2.TabIndex = 22;
-            // 
-            // label33
-            // 
-            this.label33.AutoSize = true;
-            this.label33.Font = new System.Drawing.Font("Segoe UI Semibold", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label33.Location = new System.Drawing.Point(328, 18);
-            this.label33.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(148, 21);
-            this.label33.TabIndex = 23;
-            this.label33.Text = "Dados Adicionais 3";
-            // 
-            // textBox_dadosAdicionais3
-            // 
-            this.textBox_dadosAdicionais3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox_dadosAdicionais3.Location = new System.Drawing.Point(326, 44);
-            this.textBox_dadosAdicionais3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.textBox_dadosAdicionais3.Name = "textBox_dadosAdicionais3";
-            this.textBox_dadosAdicionais3.Size = new System.Drawing.Size(147, 31);
-            this.textBox_dadosAdicionais3.TabIndex = 24;
-            // 
             // CadastroFornecedores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -1356,7 +1338,7 @@ namespace interface_wms
             this.MinimumSize = new System.Drawing.Size(1909, 1018);
             this.Name = "CadastroFornecedores";
             this.ShowIcon = false;
-            this.Text = "System Name - Cadastro de Produtos";
+            this.Text = "System Name - Cadastro de Fornecedores";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.menu.ResumeLayout(false);
             this.menu.PerformLayout();
@@ -1374,12 +1356,12 @@ namespace interface_wms
             this.tabPage3.PerformLayout();
             this.tabPage4.ResumeLayout(false);
             this.tabPage4.PerformLayout();
+            this.tabPage5.ResumeLayout(false);
+            this.tabPage5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
-            this.tabPage5.ResumeLayout(false);
-            this.tabPage5.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1412,7 +1394,7 @@ namespace interface_wms
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBox_nomeFantasia;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label6;
@@ -1453,7 +1435,7 @@ namespace interface_wms
         private System.Windows.Forms.TextBox textBox_logradouro;
         private System.Windows.Forms.ComboBox comboBox_estado;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox textBox_cnpj;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.ComboBox comboBox_situacaoIcms;
         private System.Windows.Forms.ComboBox comboBox_regimetTributacao;
@@ -1461,7 +1443,7 @@ namespace interface_wms
         private System.Windows.Forms.TextBox textBox_aliquota;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox textBox_inscricaoMunicipal;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.TextBox textBox9;
         private System.Windows.Forms.Label label26;
@@ -1475,8 +1457,6 @@ namespace interface_wms
         private System.Windows.Forms.TextBox textBox_contaCorrente;
         private System.Windows.Forms.Label label31;
         private System.Windows.Forms.TextBox textBox_digitoContaCorrente;
-        private System.Windows.Forms.DataGridViewTextBoxColumn codigo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nome;
         private System.Windows.Forms.TextBox textBox_nomeContato;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.TextBox textBox_email;
