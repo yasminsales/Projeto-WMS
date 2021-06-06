@@ -33,6 +33,29 @@ namespace interface_wms
             con.Close();
         }
 
+        private IEnumerable<SelectItem> ObterItensSelect(string tabela, string colunaDesc, string colunaId)
+        {
+            OleDbConnection con = new OleDbConnection(Globals.ConnString);
+            con.Open();
+            OleDbCommand cmd = con.CreateCommand();
+            cmd.CommandText = $"Select {colunaId}, {colunaDesc} from {tabela}";
+            cmd.Connection = con;
+            cmd.CommandType = CommandType.Text;
+            OleDbDataAdapter da = new OleDbDataAdapter(cmd);
+            DataTable itensDataTable = new DataTable();
+            da.Fill(itensDataTable);
+            con.Close();
+
+            foreach (DataRow item in itensDataTable.Rows)
+            {
+                yield return new SelectItem
+                {
+                    Id = (int)item[colunaId],
+                    Label = (string)item[colunaDesc]
+                };
+            }
+        }
+
         private int ObterStatusCadastro()
         {
             if (!string.IsNullOrWhiteSpace(this.textBox_cnpj.Text) &&
@@ -40,14 +63,14 @@ namespace interface_wms
                     !string.IsNullOrWhiteSpace(this.textBox_nomeFantasia.Text) &&
                     !string.IsNullOrWhiteSpace(this.textBox_telefoneFixo.Text) &&
                     !string.IsNullOrWhiteSpace(this.textBox_telefoneCelular.Text) &&
-                    !string.IsNullOrWhiteSpace(this.comboBox_banco.Text) &&
+                    comboBox_banco.SelectedItem != null &&
                     !string.IsNullOrWhiteSpace(this.textBox_agencia.Text) &&
                     !string.IsNullOrWhiteSpace(this.textBox_contaCorrente.Text) &&
                     !string.IsNullOrWhiteSpace(this.textBox_contaCorrente.Text) &&
                     !string.IsNullOrWhiteSpace(this.comboBox_segmento.Text) &&
-                    !string.IsNullOrWhiteSpace(this.comboBox_estado.Text) &&
-                    !string.IsNullOrWhiteSpace(this.textBox_cidade.Text) &&
-                    !string.IsNullOrWhiteSpace(this.textBox_bairro.Text) &&
+                    comboBox_estado.SelectedItem != null &&
+                    comboBox_cidade.SelectedItem != null &&
+                    comboBox_bairro.SelectedItem != null &&
                     !string.IsNullOrWhiteSpace(this.textBox_logradouro.Text) &&
                     !string.IsNullOrWhiteSpace(this.textBox_numero.Text) &&
                     !string.IsNullOrWhiteSpace(this.textBox_complemento.Text) &&
@@ -55,15 +78,28 @@ namespace interface_wms
                     !string.IsNullOrWhiteSpace(this.textBox_email.Text) &&
                     !string.IsNullOrWhiteSpace(this.textBox_inscricaoEstadual.Text) &&
                     !string.IsNullOrWhiteSpace(this.textBox_inscricaoMunicipal.Text) &&
+                    comboBox_regimetTributacao.SelectedItem != null &&
+                    comboBox_situacaoIcms.SelectedItem != null &&
+                    comboBox_segmento.SelectedItem != null &&
                     !string.IsNullOrWhiteSpace(this.textBox_nomeContato.Text) &&
                     !string.IsNullOrWhiteSpace(this.textBox_dadosAdicionais1.Text) &&
                     !string.IsNullOrWhiteSpace(this.textBox_dadosAdicionais2.Text) &&
                     !string.IsNullOrWhiteSpace(this.textBox_dadosAdicionais3.Text))
             {
-                return 1;
+                return 2;
             }
 
-            return 0;
+            return 1;
+        }
+
+        private int ObterValorSelecionado(ComboBox comboBox)
+        {
+            if (comboBox.SelectedItem != null && comboBox.SelectedItem is SelectItem)
+            {
+                return ((SelectItem)comboBox.SelectedItem).Id;
+            }
+
+            return -1;
         }
 
         private void Criar()
@@ -73,84 +109,110 @@ namespace interface_wms
             OleDbCommand cmd = con.CreateCommand();
             cmd.Connection = con;
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "INSERT INTO g1_tblFornecedores " +
-                    " (CNPJ, razaoSocial, nomeFantasia, telefoneFixo, telefoneCelular, " +
-                    //"idBanco, " +
-                    "agencia, contaCorrente, " +
-                    //"digitoContaCorrente, idSegmento, idEstado, idCidade," +
-                    //" idBairro, " +
-                    "logradouro, " +
-                    //"numero, " +
-                    "complemento, CEP, email, inscricaoEstadual," +
-                    " inscricaoMunicipal, nomeContato, " +
-                    //"statusCadastro, " +
-                    "dadosAdicionais1, " +
-                    "dadosAdicionais2, dadosAdicionais3)" +
-                    "VALUES " +
-                    " (@CNPJ, @razaoSocial, @nomeFantasia, @telefoneFixo, @telefoneCelular, " +
-                    //"@idBanco, " +
-                    "@agencia, @contaCorrente, " +
-                    //"@digitoContaCorrente, @idSegmento, @idEstado, @idCidade," +
-                    //" @idBairro, " +
-                    "@logradouro, " +
-                    //"@numero, " +
-                    "@complemento, @CEP, @email, @inscricaoEstadual," +
-                    " @inscricaoMunicipal, @nomeContato, " +
-                    //"@statusCadastro, " +
-                    "@dadosAdicionais1, " +
-                    "@dadosAdicionais2, @dadosAdicionais3);";
 
-            cmd.Parameters.AddWithValue("CNPJ", this.textBox_cnpj.Text);
-            cmd.Parameters.AddWithValue("razaoSocial", this.textBox_razaoSocial.Text);
-            cmd.Parameters.AddWithValue("nomeFantasia", this.textBox_nomeFantasia.Text);
-            cmd.Parameters.AddWithValue("telefoneFixo", this.textBox_telefoneFixo.Text);
-            cmd.Parameters.AddWithValue("telefoneCelular", this.textBox_telefoneCelular.Text);
-            //cmd.Parameters.AddWithValue("idBanco", this.comboBox_banco.Text);
-            cmd.Parameters.AddWithValue("agencia", this.textBox_agencia.Text);
-            cmd.Parameters.AddWithValue("contaCorrente", this.textBox_contaCorrente.Text);
-            //cmd.Parameters.AddWithValue("digitoContaCorrente", this.textBox_contaCorrente.Text);
-            //cmd.Parameters.AddWithValue("idSegmento", this.comboBox_segmento.Text);
-            //cmd.Parameters.AddWithValue("idEstado", this.comboBox_estado.Text);
-            //cmd.Parameters.AddWithValue("idCidade", this.textBox_cidade.Text);
-            //cmd.Parameters.AddWithValue("idBairro", this.textBox_bairro.Text);
-            cmd.Parameters.AddWithValue("Logradouro", this.textBox_logradouro.Text);
-            if (!string.IsNullOrWhiteSpace(this.textBox_numero.Text) &&
-                int.TryParse(this.textBox_numero.Text, out int numeroInt))
+            int digitoInt = 0;
+            if (!string.IsNullOrWhiteSpace(this.textBox_numero.Text))
             {
-                cmd.Parameters.AddWithValue("Numero", numeroInt);
+                int.TryParse(this.textBox_digitoContaCorrente.Text, out digitoInt);
             }
-            cmd.Parameters.AddWithValue("Complemento", this.textBox_complemento.Text);
-            cmd.Parameters.AddWithValue("CEP", this.textBox_cep.Text);
-            cmd.Parameters.AddWithValue("email", this.textBox_email.Text);
-            cmd.Parameters.AddWithValue("inscricaoEstadual", this.textBox_inscricaoEstadual.Text);
-            cmd.Parameters.AddWithValue("inscricaoMunicipal", this.textBox_inscricaoMunicipal.Text);
-            cmd.Parameters.AddWithValue("nomeContato", this.textBox_nomeContato.Text);
 
-            cmd.Parameters.AddWithValue("dadosAdicionais1", this.textBox_dadosAdicionais1.Text);
-            cmd.Parameters.AddWithValue("dadosAdicionais2", this.textBox_dadosAdicionais2.Text);
-            cmd.Parameters.AddWithValue("dadosAdicionais3", this.textBox_dadosAdicionais3.Text);
-            //cmd.Parameters.AddWithValue("statusCadastro", ObterStatusCadastro());
+            int numeroInt = 0;
+            if (!string.IsNullOrWhiteSpace(this.textBox_numero.Text))
+            {
+                int.TryParse(this.textBox_numero.Text, out numeroInt);
+            }
+
+            cmd.CommandText = "INSERT INTO g1_tblFornecedores " +
+            /*1*/        " ( CNPJ, " +
+                        "razaoSocial, " +
+                        "nomeFantasia, " +
+                        "telefoneFixo, " +
+            /*5*/            "telefoneCelular, " +
+                        "idBanco, " +
+                        "agencia, " +
+                        "contaCorrente, " +
+                        "digitoContaCorrente, " +
+              /*10*/          "idSegmento, " +
+                        "idEstado, " +
+                        "idCidade," +
+                        " idBairro, " +
+                        "logradouro, " +
+               /*15*/         "numero, " +
+                        "complemento, " +
+                        "CEP, " +
+                        "email, " +
+                        "inscricaoEstadual," +
+               /*20*/         " inscricaoMunicipal, " +
+                        "nomeContato, " +
+                        "statusCadastro, " +
+                        "dadosAdicionais1, " +
+                        "dadosAdicionais2, " +
+                /*25*/        "dadosAdicionais3)" +
+                    "VALUES " +
+               /*1*/         $" ('{this.textBox_cnpj.Text}', " +
+                            $"'{textBox_razaoSocial.Text}', " +
+                            $"'{textBox_nomeFantasia.Text}', " +
+                            $"'{textBox_telefoneFixo.Text}', " +
+                /*5*/       $"'{textBox_telefoneCelular.Text}'," +
+                            $"{ObterValorSelecionado(comboBox_banco)}," +
+                            $"'{textBox_agencia.Text}'," +
+                            $"'{textBox_contaCorrente.Text}', " +
+                            $"{digitoInt}, " +
+                 /*10*/     $"{ObterValorSelecionado(comboBox_segmento)}, " +
+                            $"{ObterValorSelecionado(comboBox_estado)}," +
+                            $"{ObterValorSelecionado(comboBox_cidade)}, " +
+                            $"{ObterValorSelecionado(comboBox_bairro)}, " +
+                            $"'{textBox_logradouro.Text}', " +
+                   /*15*/   $"{numeroInt}, " +
+                            $"'{textBox_complemento.Text}', " +
+                            $"'{textBox_cep.Text}', " +
+                            $"'{textBox_email.Text}', " +
+                            $"'{textBox_inscricaoEstadual.Text}'," +
+                     /*20*/ $"'{textBox_inscricaoMunicipal.Text}', " +
+                            $"'{textBox_nomeContato.Text}', " +
+                            $"{ObterStatusCadastro()}, " +
+                            $"'{textBox_dadosAdicionais1.Text}', " +
+                            $"'{textBox_dadosAdicionais2.Text}', " +
+                      /*25*/$"'{textBox_dadosAdicionais3.Text}');";
 
             cmd.ExecuteNonQuery();
 
             con.Close();
             MessageBox.Show("Dados inseridos com sucesso");
-
-
-            this.Close();
         }
 
-
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void Salvar_Click(object sender, EventArgs e)
         {
-
+            try
+            {
+                Criar();
+                Consultar(null, null);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao cadastrar, forneça mais informações e tente novamente. " + ex.Message);
+            }
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void PreencherSelects()
         {
-            Criar();
-            Consultar(null, null);
+            comboBox_bairro.Items.AddRange(ObterItensSelect("g1_tblBairro", "descBairro", "idBairro").ToArray());
+            comboBox_banco.Items.AddRange(ObterItensSelect("g1_tblBanco", "codBanco", "idBanco").ToArray());
+            comboBox_cidade.Items.AddRange(ObterItensSelect("g1_tblCidade", "descCidade", "idCidade").ToArray());
+            comboBox_estado.Items.AddRange(ObterItensSelect("g1_tblEstado", "siglaEstado", "idEstado").ToArray());
+            //comboBox_regimetTributacao.Items.AddRange(ObterItensSelect("g1_tblBairro", "descBairro", "idBairro").ToArray());
+            comboBox_segmento.Items.AddRange(ObterItensSelect("g1_tblSegmento", "descSegmento", "idSegmento").ToArray());
+            //comboBox_situacaoIcms.Items.AddRange(ObterItensSelect("g1_tblTipoTributo", "descSituacaoTributo", "idTipoTributo").ToArray());
+        }
+
+        private void CadastroFornecedores_Activated(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Maximized;
+        }
+
+        private void CadastroFornecedores_Load(object sender, EventArgs e)
+        {
+            PreencherSelects();
         }
     }
 }

@@ -69,14 +69,14 @@ namespace interface_wms
             this.label13 = new System.Windows.Forms.Label();
             this.textBox_telefoneCelular = new System.Windows.Forms.TextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.comboBox_bairro = new System.Windows.Forms.ComboBox();
+            this.comboBox_cidade = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
             this.comboBox_estado = new System.Windows.Forms.ComboBox();
             this.Estado = new System.Windows.Forms.Label();
             this.textBox_cep = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.textBox_cidade = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
-            this.textBox_bairro = new System.Windows.Forms.TextBox();
             this.textBox_complemento = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
             this.textBox_numero = new System.Windows.Forms.TextBox();
@@ -167,7 +167,7 @@ namespace interface_wms
             this.exibirToolStripMenuItem});
             this.menu.Location = new System.Drawing.Point(0, 0);
             this.menu.Name = "menu";
-            this.menu.Size = new System.Drawing.Size(1887, 36);
+            this.menu.Size = new System.Drawing.Size(1887, 33);
             this.menu.TabIndex = 1;
             this.menu.Text = "menuStrip1";
             // 
@@ -180,7 +180,7 @@ namespace interface_wms
             this.cadastroDeFornecedoresToolStripMenuItem});
             this.arquivoToolStripMenuItem.ForeColor = System.Drawing.SystemColors.GrayText;
             this.arquivoToolStripMenuItem.Name = "arquivoToolStripMenuItem";
-            this.arquivoToolStripMenuItem.Size = new System.Drawing.Size(90, 32);
+            this.arquivoToolStripMenuItem.Size = new System.Drawing.Size(90, 29);
             this.arquivoToolStripMenuItem.Text = "Sistema";
             // 
             // optionToolStripMenuItem
@@ -213,7 +213,7 @@ namespace interface_wms
             this.permissõesToolStripMenuItem});
             this.editarToolStripMenuItem.ForeColor = System.Drawing.SystemColors.GrayText;
             this.editarToolStripMenuItem.Name = "editarToolStripMenuItem";
-            this.editarToolStripMenuItem.Size = new System.Drawing.Size(88, 32);
+            this.editarToolStripMenuItem.Size = new System.Drawing.Size(88, 29);
             this.editarToolStripMenuItem.Text = "Usuário";
             // 
             // optionToolStripMenuItem1
@@ -234,7 +234,7 @@ namespace interface_wms
             this.optionToolStripMenuItem2});
             this.exibirToolStripMenuItem.ForeColor = System.Drawing.SystemColors.GrayText;
             this.exibirToolStripMenuItem.Name = "exibirToolStripMenuItem";
-            this.exibirToolStripMenuItem.Size = new System.Drawing.Size(74, 32);
+            this.exibirToolStripMenuItem.Size = new System.Drawing.Size(74, 29);
             this.exibirToolStripMenuItem.Text = "Ajuda";
             // 
             // optionToolStripMenuItem2
@@ -363,7 +363,7 @@ namespace interface_wms
             this.button4.Text = "Salvar";
             this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button4.UseVisualStyleBackColor = false;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.button4.Click += new System.EventHandler(this.Salvar_Click);
             // 
             // button5
             // 
@@ -568,14 +568,14 @@ namespace interface_wms
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.comboBox_bairro);
+            this.tabPage2.Controls.Add(this.comboBox_cidade);
             this.tabPage2.Controls.Add(this.label10);
             this.tabPage2.Controls.Add(this.comboBox_estado);
             this.tabPage2.Controls.Add(this.Estado);
             this.tabPage2.Controls.Add(this.textBox_cep);
             this.tabPage2.Controls.Add(this.label12);
-            this.tabPage2.Controls.Add(this.textBox_cidade);
             this.tabPage2.Controls.Add(this.label16);
-            this.tabPage2.Controls.Add(this.textBox_bairro);
             this.tabPage2.Controls.Add(this.textBox_complemento);
             this.tabPage2.Controls.Add(this.label17);
             this.tabPage2.Controls.Add(this.textBox_numero);
@@ -590,6 +590,28 @@ namespace interface_wms
             this.tabPage2.Text = "Endereço";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // comboBox_bairro
+            // 
+            this.comboBox_bairro.DisplayMember = "Label";
+            this.comboBox_bairro.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox_bairro.FormattingEnabled = true;
+            this.comboBox_bairro.Location = new System.Drawing.Point(354, 39);
+            this.comboBox_bairro.Name = "comboBox_bairro";
+            this.comboBox_bairro.Size = new System.Drawing.Size(146, 33);
+            this.comboBox_bairro.TabIndex = 34;
+            this.comboBox_bairro.ValueMember = "Id";
+            // 
+            // comboBox_cidade
+            // 
+            this.comboBox_cidade.DisplayMember = "Label";
+            this.comboBox_cidade.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox_cidade.FormattingEnabled = true;
+            this.comboBox_cidade.Location = new System.Drawing.Point(153, 40);
+            this.comboBox_cidade.Name = "comboBox_cidade";
+            this.comboBox_cidade.Size = new System.Drawing.Size(195, 33);
+            this.comboBox_cidade.TabIndex = 33;
+            this.comboBox_cidade.ValueMember = "Id";
+            // 
             // label10
             // 
             this.label10.AutoSize = true;
@@ -603,14 +625,14 @@ namespace interface_wms
             // 
             // comboBox_estado
             // 
+            this.comboBox_estado.DisplayMember = "Label";
+            this.comboBox_estado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox_estado.FormattingEnabled = true;
-            this.comboBox_estado.Items.AddRange(new object[] {
-            "São Paulo ",
-            "Rio de Janeiro"});
             this.comboBox_estado.Location = new System.Drawing.Point(26, 39);
             this.comboBox_estado.Name = "comboBox_estado";
             this.comboBox_estado.Size = new System.Drawing.Size(121, 33);
             this.comboBox_estado.TabIndex = 31;
+            this.comboBox_estado.ValueMember = "Id";
             // 
             // Estado
             // 
@@ -643,15 +665,6 @@ namespace interface_wms
             this.label12.TabIndex = 21;
             this.label12.Text = "Cidade:";
             // 
-            // textBox_cidade
-            // 
-            this.textBox_cidade.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox_cidade.Location = new System.Drawing.Point(153, 41);
-            this.textBox_cidade.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.textBox_cidade.Name = "textBox_cidade";
-            this.textBox_cidade.Size = new System.Drawing.Size(192, 31);
-            this.textBox_cidade.TabIndex = 22;
-            // 
             // label16
             // 
             this.label16.AutoSize = true;
@@ -662,15 +675,6 @@ namespace interface_wms
             this.label16.Size = new System.Drawing.Size(58, 21);
             this.label16.TabIndex = 23;
             this.label16.Text = "Bairro:";
-            // 
-            // textBox_bairro
-            // 
-            this.textBox_bairro.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox_bairro.Location = new System.Drawing.Point(353, 41);
-            this.textBox_bairro.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.textBox_bairro.Name = "textBox_bairro";
-            this.textBox_bairro.Size = new System.Drawing.Size(146, 31);
-            this.textBox_bairro.TabIndex = 24;
             // 
             // textBox_complemento
             // 
@@ -755,21 +759,18 @@ namespace interface_wms
             // 
             // comboBox_segmento
             // 
+            this.comboBox_segmento.DisplayMember = "Label";
+            this.comboBox_segmento.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox_segmento.FormattingEnabled = true;
-            this.comboBox_segmento.Items.AddRange(new object[] {
-            "0",
-            "1",
-            "10",
-            "11",
-            "12",
-            "13"});
             this.comboBox_segmento.Location = new System.Drawing.Point(527, 44);
             this.comboBox_segmento.Name = "comboBox_segmento";
             this.comboBox_segmento.Size = new System.Drawing.Size(147, 33);
             this.comboBox_segmento.TabIndex = 33;
+            this.comboBox_segmento.ValueMember = "Id";
             // 
             // comboBox_situacaoIcms
             // 
+            this.comboBox_situacaoIcms.DisplayMember = "Label";
             this.comboBox_situacaoIcms.FormattingEnabled = true;
             this.comboBox_situacaoIcms.Items.AddRange(new object[] {
             "0",
@@ -782,9 +783,11 @@ namespace interface_wms
             this.comboBox_situacaoIcms.Name = "comboBox_situacaoIcms";
             this.comboBox_situacaoIcms.Size = new System.Drawing.Size(147, 33);
             this.comboBox_situacaoIcms.TabIndex = 32;
+            this.comboBox_situacaoIcms.ValueMember = "Id";
             // 
             // comboBox_regimetTributacao
             // 
+            this.comboBox_regimetTributacao.DisplayMember = "Label";
             this.comboBox_regimetTributacao.FormattingEnabled = true;
             this.comboBox_regimetTributacao.Items.AddRange(new object[] {
             "Simples nacional",
@@ -794,6 +797,7 @@ namespace interface_wms
             this.comboBox_regimetTributacao.Name = "comboBox_regimetTributacao";
             this.comboBox_regimetTributacao.Size = new System.Drawing.Size(147, 33);
             this.comboBox_regimetTributacao.TabIndex = 31;
+            this.comboBox_regimetTributacao.ValueMember = "Id";
             // 
             // label22
             // 
@@ -907,18 +911,14 @@ namespace interface_wms
             // 
             // comboBox_banco
             // 
+            this.comboBox_banco.DisplayMember = "Label";
+            this.comboBox_banco.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox_banco.FormattingEnabled = true;
-            this.comboBox_banco.Items.AddRange(new object[] {
-            "Banco do Brasil ",
-            "Bradesco",
-            "Caixa",
-            "Itaú ",
-            "Santander",
-            "Nubank "});
             this.comboBox_banco.Location = new System.Drawing.Point(14, 39);
             this.comboBox_banco.Name = "comboBox_banco";
             this.comboBox_banco.Size = new System.Drawing.Size(121, 33);
             this.comboBox_banco.TabIndex = 23;
+            this.comboBox_banco.ValueMember = "Id";
             // 
             // label28
             // 
@@ -1120,7 +1120,6 @@ namespace interface_wms
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.Size = new System.Drawing.Size(1434, 152);
             this.dataGridView1.TabIndex = 16;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // groupBox2
             // 
@@ -1318,6 +1317,8 @@ namespace interface_wms
             this.Name = "CadastroFornecedores";
             this.ShowIcon = false;
             this.Text = "System Name - Cadastro de Fornecedores";
+            this.Activated += new System.EventHandler(this.CadastroFornecedores_Activated);
+            this.Load += new System.EventHandler(this.CadastroFornecedores_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.menu.ResumeLayout(false);
             this.menu.PerformLayout();
@@ -1403,9 +1404,7 @@ namespace interface_wms
         private System.Windows.Forms.Label Estado;
         private System.Windows.Forms.TextBox textBox_cep;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox textBox_cidade;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.TextBox textBox_bairro;
         private System.Windows.Forms.TextBox textBox_complemento;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.TextBox textBox_numero;
@@ -1447,6 +1446,8 @@ namespace interface_wms
         private System.Windows.Forms.TextBox textBox_dadosAdicionais2;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.TextBox textBox_dadosAdicionais1;
+        private System.Windows.Forms.ComboBox comboBox_bairro;
+        private System.Windows.Forms.ComboBox comboBox_cidade;
     }
 }
 
