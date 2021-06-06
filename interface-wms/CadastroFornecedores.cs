@@ -13,6 +13,8 @@ namespace interface_wms
 {
     public partial class CadastroFornecedores : Form
     {
+        private int _idUpdate = 0;
+
         public CadastroFornecedores()
         {
             InitializeComponent();
@@ -102,6 +104,34 @@ namespace interface_wms
             return -1;
         }
 
+        private void LimparCampos()
+        {
+            textBox_cnpj.Text = "";
+            textBox_razaoSocial.Text = "";
+            textBox_nomeFantasia.Text = "";
+            textBox_telefoneFixo.Text = "";
+            textBox_telefoneCelular.Text = "";
+            comboBox_banco.SelectedItem = null;
+            textBox_agencia.Text = "";
+            textBox_contaCorrente.Text = "";
+            textBox_digitoContaCorrente.Text = "";
+            comboBox_segmento.SelectedItem = null;
+            comboBox_estado.SelectedItem = null;
+            comboBox_cidade.SelectedItem = null;
+            comboBox_bairro.SelectedItem = null;
+            textBox_logradouro.Text = "";
+            textBox_numero.Text = "";
+            textBox_complemento.Text = "";
+            textBox_cep.Text = "";
+            textBox_email.Text = "";
+            textBox_inscricaoEstadual.Text = "";
+            textBox_inscricaoMunicipal.Text = "";
+            textBox_nomeContato.Text = "";
+            textBox_dadosAdicionais1.Text = "";
+            textBox_dadosAdicionais2.Text = "";
+            textBox_dadosAdicionais3.Text = "";
+        }
+
         private void Criar()
         {
             OleDbConnection con = new OleDbConnection(Globals.ConnString);
@@ -149,7 +179,7 @@ namespace interface_wms
                         "dadosAdicionais2, " +
                 /*25*/        "dadosAdicionais3)" +
                     "VALUES " +
-               /*1*/         $" ('{this.textBox_cnpj.Text}', " +
+               /*1*/         $" ('{textBox_cnpj.Text}', " +
                             $"'{textBox_razaoSocial.Text}', " +
                             $"'{textBox_nomeFantasia.Text}', " +
                             $"'{textBox_telefoneFixo.Text}', " +
@@ -181,11 +211,76 @@ namespace interface_wms
             MessageBox.Show("Dados inseridos com sucesso");
         }
 
+        private void Atualizar()
+        {
+            OleDbConnection con = new OleDbConnection(Globals.ConnString);
+            con.Open();
+            OleDbCommand cmd = con.CreateCommand();
+            cmd.Connection = con;
+            cmd.CommandType = CommandType.Text;
+
+            int digitoInt = 0;
+            if (!string.IsNullOrWhiteSpace(this.textBox_numero.Text))
+            {
+                int.TryParse(this.textBox_digitoContaCorrente.Text, out digitoInt);
+            }
+
+            int numeroInt = 0;
+            if (!string.IsNullOrWhiteSpace(this.textBox_numero.Text))
+            {
+                int.TryParse(this.textBox_numero.Text, out numeroInt);
+            }
+
+            cmd.CommandText = "UPDATE g1_tblFornecedores " +
+                " SET " +
+            "  CNPJ " + "=" + $" '{textBox_cnpj.Text}', " +
+    "razaoSocial " + "=" + $"'{textBox_razaoSocial.Text}', " +
+    "nomeFantasia " + "=" + $"'{textBox_nomeFantasia.Text}', " +
+    "telefoneFixo " + "=" + $"'{textBox_telefoneFixo.Text}', " +
+/*5*/            "telefoneCelular " + "=" +                 /*5*/       $"'{textBox_telefoneCelular.Text}'," +
+    "idBanco " + "=" + $"{ObterValorSelecionado(comboBox_banco)}," +
+    "agencia " + "=" + $"'{textBox_agencia.Text}'," +
+    "contaCorrente " + "=" + $"'{textBox_contaCorrente.Text}', " +
+    "digitoContaCorrente " + "=" + $"{digitoInt}, " +
+/*10*/          "idSegmento " + "=" +                  /*10*/     $"{ObterValorSelecionado(comboBox_segmento)}, " +
+    "idEstado " + "=" + $"{ObterValorSelecionado(comboBox_estado)}," +
+    "idCidade" + "=" + $"{ObterValorSelecionado(comboBox_cidade)}, " +
+    " idBairro " + "=" + $"{ObterValorSelecionado(comboBox_bairro)}, " +
+    "logradouro " + "=" + $"'{textBox_logradouro.Text}', " +
+/*15*/         "numero " + "=" +                    /*15*/   $"{numeroInt}, " +
+    "complemento " + "=" + $"'{textBox_complemento.Text}', " +
+    "CEP " + "=" + $"'{textBox_cep.Text}', " +
+    "email " + "=" + $"'{textBox_email.Text}', " +
+    "inscricaoEstadual" + "=" + $"'{textBox_inscricaoEstadual.Text}'," +
+/*20*/         " inscricaoMunicipal " + "=" +                      /*20*/ $"'{textBox_inscricaoMunicipal.Text}', " +
+    "nomeContato " + "=" + $"'{textBox_nomeContato.Text}', " +
+    "statusCadastro " + "=" + $"{ObterStatusCadastro()}, " +
+    "dadosAdicionais1 " + "=" + $"'{textBox_dadosAdicionais1.Text}', " +
+    "dadosAdicionais2 " + "=" + $"'{textBox_dadosAdicionais2.Text}', " +
+/*25*/              "dadosAdicionais3" + "=" + /*25*/$"'{textBox_dadosAdicionais3.Text}' " +
+                      $" WHERE idFornecedores = {_idUpdate};";
+
+            cmd.ExecuteNonQuery();
+
+            con.Close();
+            MessageBox.Show("Dados atualizados com sucesso");
+        }
+
         private void Salvar_Click(object sender, EventArgs e)
         {
             try
             {
-                Criar();
+                if (_idUpdate == 0)
+                {
+                    Criar();
+                }
+                else
+                {
+                    Atualizar();
+                    _idUpdate = 0;
+                    textBox1.Text = "000";
+                }
+                LimparCampos();
                 Consultar(null, null);
             }
             catch (Exception ex)
@@ -227,7 +322,7 @@ namespace interface_wms
             OleDbConnection con = new OleDbConnection(Globals.ConnString);
             con.Open();
             OleDbCommand cmd = con.CreateCommand();
-            
+
             var selectedRowIndex = selectedCells[0].RowIndex;
             var rowData = this.dataGridView1.Rows[selectedRowIndex];
             var id = (int)rowData.Cells[0].Value;
@@ -246,6 +341,103 @@ namespace interface_wms
 
             Consultar(null, null);
             con.Close();
+        }
+
+        private string TratarCampoVazio(object valor)
+        {
+            if (valor is DBNull)
+            {
+                return "";
+            }
+
+            return (string)valor;
+        }
+
+        private int TratarCampoVazioInt(object valor)
+        {
+            if (valor is DBNull)
+            {
+                return -1;
+            }
+
+            return (int)valor;
+        }
+
+        private void SelecionarEdicao_Click(object sender, EventArgs e)
+        {
+            var selectedCells = this.dataGridView1.SelectedCells;
+            if (selectedCells.Count == 0)
+            {
+                MessageBox.Show("Uma linha deve ser selecionada.");
+                return;
+            }
+
+            var selectedRowIndex = selectedCells[0].RowIndex;
+            var rowData = this.dataGridView1.Rows[selectedRowIndex];
+            _idUpdate = (int)rowData.Cells[0].Value;
+            textBox1.Text = _idUpdate.ToString();
+
+            OleDbConnection con = new OleDbConnection(Globals.ConnString);
+            con.Open();
+            OleDbCommand cmd = con.CreateCommand();
+            cmd.CommandText = "Select * from g1_tblFornecedores where idFornecedores = " + _idUpdate;
+
+            cmd.Connection = con;
+            cmd.CommandType = CommandType.Text;
+            var reader = cmd.ExecuteReader();
+
+            while (reader.Read())
+            {
+                textBox_cnpj.Text = TratarCampoVazio(reader["CNPJ"]);
+                textBox_razaoSocial.Text = TratarCampoVazio(reader["razaoSocial"]);
+                textBox_nomeFantasia.Text = TratarCampoVazio(reader["nomeFantasia"]);
+                textBox_telefoneFixo.Text = TratarCampoVazio(reader["telefoneFixo"]);
+                textBox_telefoneCelular.Text = TratarCampoVazio(reader["telefoneCelular"]);
+                SelecionarValorCombo(comboBox_banco, reader["idBanco"]);
+                textBox_agencia.Text = TratarCampoVazio(reader["agencia"]);
+                textBox_contaCorrente.Text = TratarCampoVazio(reader["contaCorrente"]);
+                textBox_digitoContaCorrente.Text = TratarCampoVazioInt(reader["digitoContaCorrente"]).ToString();
+                SelecionarValorCombo(comboBox_segmento, reader["idSegmento"]);
+                SelecionarValorCombo(comboBox_estado, reader["idEstado"]);
+                SelecionarValorCombo(comboBox_cidade, reader["idCidade"]);
+                SelecionarValorCombo(comboBox_bairro, reader["idBairro"]);
+                textBox_logradouro.Text = TratarCampoVazio(reader["logradouro"]);
+                textBox_numero.Text = TratarCampoVazioInt(reader["numero"]).ToString();
+                textBox_complemento.Text = TratarCampoVazio(reader["complemento"]);
+                textBox_cep.Text = TratarCampoVazio(reader["CEP"]);
+                textBox_email.Text = TratarCampoVazio(reader["email"]);
+                textBox_inscricaoEstadual.Text = TratarCampoVazio(reader["inscricaoEstadual"]);
+                textBox_inscricaoMunicipal.Text = TratarCampoVazio(reader["inscricaoMunicipal"]);
+                textBox_nomeContato.Text = TratarCampoVazio(reader["nomeContato"]);
+                textBox_dadosAdicionais1.Text = TratarCampoVazio(reader["dadosAdicionais1"]);
+                textBox_dadosAdicionais2.Text = TratarCampoVazio(reader["dadosAdicionais2"]);
+                textBox_dadosAdicionais3.Text = TratarCampoVazio(reader["dadosAdicionais3"]);
+            }
+            con.Close();
+        }
+
+        private void SelecionarValorCombo(ComboBox comboBox, object valor)
+        {
+            if (valor is DBNull)
+            {
+                return;
+            }
+
+            var itemsList = new List<SelectItem>();
+            foreach (var comboItem in comboBox.Items)
+            {
+                itemsList.Add((SelectItem)comboItem);
+            }
+
+            var item = itemsList.FirstOrDefault(i => i.Id == (int)valor);
+            comboBox.SelectedItem = item;
+        }
+
+        private void Cancelar_Click(object sender, EventArgs e)
+        {
+            _idUpdate = 0;
+            textBox1.Text = "000";
+            LimparCampos();
         }
     }
 }

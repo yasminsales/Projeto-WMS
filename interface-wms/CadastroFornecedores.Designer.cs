@@ -338,6 +338,7 @@ namespace interface_wms
             this.button3.Text = "Cancelar";
             this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.Cancelar_Click);
             // 
             // pictureBox4
             // 
@@ -1078,6 +1079,7 @@ namespace interface_wms
             // textBox1
             // 
             this.textBox1.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.textBox1.Enabled = false;
             this.textBox1.Font = new System.Drawing.Font("Segoe UI Semibold", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox1.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.textBox1.Location = new System.Drawing.Point(56, 91);
@@ -1154,6 +1156,7 @@ namespace interface_wms
             this.button2.Text = "Editar";
             this.button2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.SelecionarEdicao_Click);
             // 
             // button1
             // 
@@ -1176,7 +1179,7 @@ namespace interface_wms
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Segoe UI Semibold", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(22, 43);
+            this.label9.Location = new System.Drawing.Point(18, 43);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(309, 21);
@@ -1186,10 +1189,10 @@ namespace interface_wms
             // textBox_buscaFornecedor
             // 
             this.textBox_buscaFornecedor.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox_buscaFornecedor.Location = new System.Drawing.Point(332, 37);
+            this.textBox_buscaFornecedor.Location = new System.Drawing.Point(339, 37);
             this.textBox_buscaFornecedor.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textBox_buscaFornecedor.Name = "textBox_buscaFornecedor";
-            this.textBox_buscaFornecedor.Size = new System.Drawing.Size(912, 31);
+            this.textBox_buscaFornecedor.Size = new System.Drawing.Size(905, 31);
             this.textBox_buscaFornecedor.TabIndex = 5;
             // 
             // button6
@@ -1241,6 +1244,7 @@ namespace interface_wms
             this.button7.Text = "Editar";
             this.button7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button7.UseVisualStyleBackColor = false;
+            this.button7.Click += new System.EventHandler(this.SelecionarEdicao_Click);
             // 
             // groupBox3
             // 
