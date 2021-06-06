@@ -214,5 +214,38 @@ namespace interface_wms
         {
             PreencherSelects();
         }
+
+        private void Excluir_Click(object sender, EventArgs e)
+        {
+            var selectedCells = this.dataGridView1.SelectedCells;
+            if (selectedCells.Count == 0)
+            {
+                MessageBox.Show("Uma linha deve ser selecionada.");
+                return;
+            }
+
+            OleDbConnection con = new OleDbConnection(Globals.ConnString);
+            con.Open();
+            OleDbCommand cmd = con.CreateCommand();
+            
+            var selectedRowIndex = selectedCells[0].RowIndex;
+            var rowData = this.dataGridView1.Rows[selectedRowIndex];
+            var id = (int)rowData.Cells[0].Value;
+            cmd.CommandText = "DELETE from g1_tblFornecedores WHERE idFornecedores = " + id;
+            cmd.Connection = con;
+            cmd.CommandType = CommandType.Text;
+            int rowAffected = cmd.ExecuteNonQuery();
+            if (rowAffected == 0)
+            {
+                MessageBox.Show("Nenhuma linha encontrada.");
+            }
+            else
+            {
+                MessageBox.Show("Dados excluidos com sucesso");
+            }
+
+            Consultar(null, null);
+            con.Close();
+        }
     }
 }
