@@ -9,6 +9,6 @@ namespace interface_wms
 {
     class Globals
     {
-        public const string ConnString = @"Provider=Microsoft.Jet.OLEDB.4.0;Data Source= C:\Users\yasmin.sandri.sales\Downloads\interface-wms\BDP2-WMSV2.mdb";
+        public const string ConnString = @"Provider=Microsoft.Jet.OLEDB.4.0;Data Source= ..\..\..\..\BDP2-WMSV2.mdb";
     }
 }
