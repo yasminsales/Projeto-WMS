@@ -439,5 +439,15 @@ namespace interface_wms
             textBox1.Text = "000";
             LimparCampos();
         }
+
+        private void optionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+            label2.Text = DateTime.Now.ToString("dd/MM/yyyy, HH:mm");
+        }
     }
 }

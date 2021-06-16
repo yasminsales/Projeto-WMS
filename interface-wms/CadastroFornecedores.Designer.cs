@@ -29,6 +29,7 @@ namespace interface_wms
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.menu = new System.Windows.Forms.MenuStrip();
             this.arquivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -128,6 +129,9 @@ namespace interface_wms
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.button9 = new System.Windows.Forms.Button();
             this.button10 = new System.Windows.Forms.Button();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.timer2 = new System.Windows.Forms.Timer(this.components);
+            this.tmrDataHora = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.menu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -151,7 +155,7 @@ namespace interface_wms
             this.pictureBox1.Location = new System.Drawing.Point(0, 37);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1896, 200);
+            this.pictureBox1.Size = new System.Drawing.Size(1896, 80);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
@@ -167,7 +171,7 @@ namespace interface_wms
             this.exibirToolStripMenuItem});
             this.menu.Location = new System.Drawing.Point(0, 0);
             this.menu.Name = "menu";
-            this.menu.Size = new System.Drawing.Size(1887, 33);
+            this.menu.Size = new System.Drawing.Size(1887, 36);
             this.menu.TabIndex = 1;
             this.menu.Text = "menuStrip1";
             // 
@@ -188,6 +192,7 @@ namespace interface_wms
             this.optionToolStripMenuItem.Name = "optionToolStripMenuItem";
             this.optionToolStripMenuItem.Size = new System.Drawing.Size(327, 34);
             this.optionToolStripMenuItem.Text = "Sair";
+            this.optionToolStripMenuItem.Click += new System.EventHandler(this.optionToolStripMenuItem_Click);
             // 
             // toolStripMenuItem1
             // 
@@ -219,13 +224,13 @@ namespace interface_wms
             // optionToolStripMenuItem1
             // 
             this.optionToolStripMenuItem1.Name = "optionToolStripMenuItem1";
-            this.optionToolStripMenuItem1.Size = new System.Drawing.Size(216, 34);
+            this.optionToolStripMenuItem1.Size = new System.Drawing.Size(270, 34);
             this.optionToolStripMenuItem1.Text = "Ver matrícula";
             // 
             // permissõesToolStripMenuItem
             // 
             this.permissõesToolStripMenuItem.Name = "permissõesToolStripMenuItem";
-            this.permissõesToolStripMenuItem.Size = new System.Drawing.Size(216, 34);
+            this.permissõesToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
             this.permissõesToolStripMenuItem.Text = "Permissões";
             // 
             // exibirToolStripMenuItem
@@ -240,7 +245,7 @@ namespace interface_wms
             // optionToolStripMenuItem2
             // 
             this.optionToolStripMenuItem2.Name = "optionToolStripMenuItem2";
-            this.optionToolStripMenuItem2.Size = new System.Drawing.Size(177, 34);
+            this.optionToolStripMenuItem2.Size = new System.Drawing.Size(270, 34);
             this.optionToolStripMenuItem2.Text = "Suporte";
             // 
             // label1
@@ -248,7 +253,7 @@ namespace interface_wms
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(1618, 112);
+            this.label1.Location = new System.Drawing.Point(1094, 71);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(167, 25);
@@ -260,32 +265,33 @@ namespace interface_wms
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(1578, 166);
+            this.label2.Location = new System.Drawing.Point(570, 54);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(206, 32);
+            this.label2.Size = new System.Drawing.Size(222, 32);
             this.label2.TabIndex = 3;
-            this.label2.Text = "19/05/2021, 00:00";
+            this.label2.Text = "dd/MM/yyyy, 00:00";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.label3.Font = new System.Drawing.Font("Segoe UI Semilight", 26F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(292, 77);
+            this.label3.Font = new System.Drawing.Font("Segoe UI Semilight", 20F);
+            this.label3.Location = new System.Drawing.Point(151, 36);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(338, 70);
+            this.label3.Size = new System.Drawing.Size(261, 54);
             this.label3.TabIndex = 4;
             this.label3.Text = "System Name";
             // 
             // pictureBox2
             // 
             this.pictureBox2.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.pictureBox2.Location = new System.Drawing.Point(124, 66);
+            this.pictureBox2.Location = new System.Drawing.Point(83, 34);
             this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(132, 132);
+            this.pictureBox2.Size = new System.Drawing.Size(60, 60);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 5;
             this.pictureBox2.TabStop = false;
@@ -307,7 +313,7 @@ namespace interface_wms
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(300, 157);
+            this.label5.Location = new System.Drawing.Point(154, 92);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(272, 25);
@@ -316,7 +322,7 @@ namespace interface_wms
             // 
             // pictureBox3
             // 
-            this.pictureBox3.Location = new System.Drawing.Point(1410, 263);
+            this.pictureBox3.Location = new System.Drawing.Point(1403, 257);
             this.pictureBox3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(375, 385);
@@ -390,7 +396,7 @@ namespace interface_wms
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.groupBox1.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(124, 265);
+            this.groupBox1.Location = new System.Drawing.Point(124, 164);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -1120,7 +1126,7 @@ namespace interface_wms
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 62;
-            this.dataGridView1.Size = new System.Drawing.Size(1434, 152);
+            this.dataGridView1.Size = new System.Drawing.Size(1434, 282);
             this.dataGridView1.TabIndex = 16;
             // 
             // groupBox2
@@ -1132,11 +1138,11 @@ namespace interface_wms
             this.groupBox2.Controls.Add(this.dataGridView1);
             this.groupBox2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.groupBox2.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(124, 665);
+            this.groupBox2.Location = new System.Drawing.Point(124, 556);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.groupBox2.Size = new System.Drawing.Size(1492, 265);
+            this.groupBox2.Size = new System.Drawing.Size(1492, 374);
             this.groupBox2.TabIndex = 16;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Buscar Fornecedores:";
@@ -1253,11 +1259,11 @@ namespace interface_wms
             this.groupBox3.Controls.Add(this.button8);
             this.groupBox3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.groupBox3.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.Location = new System.Drawing.Point(1640, 683);
+            this.groupBox3.Location = new System.Drawing.Point(1633, 556);
             this.groupBox3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.groupBox3.Size = new System.Drawing.Size(146, 234);
+            this.groupBox3.Size = new System.Drawing.Size(153, 374);
             this.groupBox3.TabIndex = 19;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Controles";
@@ -1291,6 +1297,11 @@ namespace interface_wms
             this.button10.Text = "Próximo";
             this.button10.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button10.UseVisualStyleBackColor = false;
+            // 
+            // tmrDataHora
+            // 
+            this.tmrDataHora.Enabled = true;
+            this.tmrDataHora.Interval = 1;
             // 
             // CadastroFornecedores
             // 
@@ -1453,6 +1464,9 @@ namespace interface_wms
         private System.Windows.Forms.TextBox textBox_dadosAdicionais1;
         private System.Windows.Forms.ComboBox comboBox_bairro;
         private System.Windows.Forms.ComboBox comboBox_cidade;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Timer timer2;
+        private System.Windows.Forms.Timer tmrDataHora;
     }
 }
 
