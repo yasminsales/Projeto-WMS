@@ -30,6 +30,7 @@ namespace interface_wms
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CadastroFornecedores));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.menu = new System.Windows.Forms.MenuStrip();
             this.arquivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -47,7 +48,6 @@ namespace interface_wms
             this.label3 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.button3 = new System.Windows.Forms.Button();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
@@ -163,7 +163,6 @@ namespace interface_wms
             // 
             this.menu.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.menu.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.menu.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
             this.menu.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.menu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.arquivoToolStripMenuItem,
@@ -184,7 +183,7 @@ namespace interface_wms
             this.cadastroDeFornecedoresToolStripMenuItem});
             this.arquivoToolStripMenuItem.ForeColor = System.Drawing.SystemColors.GrayText;
             this.arquivoToolStripMenuItem.Name = "arquivoToolStripMenuItem";
-            this.arquivoToolStripMenuItem.Size = new System.Drawing.Size(90, 29);
+            this.arquivoToolStripMenuItem.Size = new System.Drawing.Size(90, 32);
             this.arquivoToolStripMenuItem.Text = "Sistema";
             // 
             // optionToolStripMenuItem
@@ -218,19 +217,19 @@ namespace interface_wms
             this.permissõesToolStripMenuItem});
             this.editarToolStripMenuItem.ForeColor = System.Drawing.SystemColors.GrayText;
             this.editarToolStripMenuItem.Name = "editarToolStripMenuItem";
-            this.editarToolStripMenuItem.Size = new System.Drawing.Size(88, 29);
+            this.editarToolStripMenuItem.Size = new System.Drawing.Size(88, 32);
             this.editarToolStripMenuItem.Text = "Usuário";
             // 
             // optionToolStripMenuItem1
             // 
             this.optionToolStripMenuItem1.Name = "optionToolStripMenuItem1";
-            this.optionToolStripMenuItem1.Size = new System.Drawing.Size(270, 34);
+            this.optionToolStripMenuItem1.Size = new System.Drawing.Size(216, 34);
             this.optionToolStripMenuItem1.Text = "Ver matrícula";
             // 
             // permissõesToolStripMenuItem
             // 
             this.permissõesToolStripMenuItem.Name = "permissõesToolStripMenuItem";
-            this.permissõesToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.permissõesToolStripMenuItem.Size = new System.Drawing.Size(216, 34);
             this.permissõesToolStripMenuItem.Text = "Permissões";
             // 
             // exibirToolStripMenuItem
@@ -239,13 +238,13 @@ namespace interface_wms
             this.optionToolStripMenuItem2});
             this.exibirToolStripMenuItem.ForeColor = System.Drawing.SystemColors.GrayText;
             this.exibirToolStripMenuItem.Name = "exibirToolStripMenuItem";
-            this.exibirToolStripMenuItem.Size = new System.Drawing.Size(74, 29);
+            this.exibirToolStripMenuItem.Size = new System.Drawing.Size(74, 32);
             this.exibirToolStripMenuItem.Text = "Ajuda";
             // 
             // optionToolStripMenuItem2
             // 
             this.optionToolStripMenuItem2.Name = "optionToolStripMenuItem2";
-            this.optionToolStripMenuItem2.Size = new System.Drawing.Size(270, 34);
+            this.optionToolStripMenuItem2.Size = new System.Drawing.Size(177, 34);
             this.optionToolStripMenuItem2.Text = "Suporte";
             // 
             // label1
@@ -265,7 +264,7 @@ namespace interface_wms
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(570, 54);
+            this.label2.Location = new System.Drawing.Point(570, 63);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(222, 32);
@@ -277,21 +276,25 @@ namespace interface_wms
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.label3.Font = new System.Drawing.Font("Segoe UI Semilight", 20F);
-            this.label3.Location = new System.Drawing.Point(151, 36);
+            this.label3.Font = new System.Drawing.Font("Segoe UI Semilight", 10F);
+            this.label3.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label3.Location = new System.Drawing.Point(568, 46);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(261, 54);
+            this.label3.Size = new System.Drawing.Size(230, 28);
             this.label3.TabIndex = 4;
-            this.label3.Text = "System Name";
+            this.label3.Text = "FATEC Warehouse System";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // pictureBox2
             // 
             this.pictureBox2.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.pictureBox2.Location = new System.Drawing.Point(83, 34);
+            this.pictureBox2.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.ErrorImage")));
+            this.pictureBox2.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.InitialImage")));
+            this.pictureBox2.Location = new System.Drawing.Point(94, 34);
             this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(60, 60);
+            this.pictureBox2.Size = new System.Drawing.Size(190, 65);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 5;
             this.pictureBox2.TabStop = false;
@@ -307,18 +310,6 @@ namespace interface_wms
             this.label4.Size = new System.Drawing.Size(180, 38);
             this.label4.TabIndex = 6;
             this.label4.Text = "Rapid Express";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(154, 92);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(272, 25);
-            this.label5.TabIndex = 7;
-            this.label5.Text = "Warehouse Management System";
             // 
             // pictureBox3
             // 
@@ -1318,7 +1309,6 @@ namespace interface_wms
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.pictureBox3);
-            this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.label3);
@@ -1378,7 +1368,6 @@ namespace interface_wms
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem preferênciasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem permissõesToolStripMenuItem;
