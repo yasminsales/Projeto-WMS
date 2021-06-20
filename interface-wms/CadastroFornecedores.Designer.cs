@@ -32,17 +32,6 @@ namespace interface_wms
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CadastroFornecedores));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.menu = new System.Windows.Forms.MenuStrip();
-            this.arquivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.optionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
-            this.preferênciasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cadastroDeFornecedoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.editarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.optionToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.permissõesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.exibirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.optionToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -129,11 +118,8 @@ namespace interface_wms
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.button9 = new System.Windows.Forms.Button();
             this.button10 = new System.Windows.Forms.Button();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.tmrDataHora = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.menu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -159,100 +145,12 @@ namespace interface_wms
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // menu
-            // 
-            this.menu.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.menu.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.menu.ImageScalingSize = new System.Drawing.Size(24, 24);
-            this.menu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.arquivoToolStripMenuItem,
-            this.editarToolStripMenuItem,
-            this.exibirToolStripMenuItem});
-            this.menu.Location = new System.Drawing.Point(0, 0);
-            this.menu.Name = "menu";
-            this.menu.Size = new System.Drawing.Size(1887, 36);
-            this.menu.TabIndex = 1;
-            this.menu.Text = "menuStrip1";
-            // 
-            // arquivoToolStripMenuItem
-            // 
-            this.arquivoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.optionToolStripMenuItem,
-            this.toolStripMenuItem1,
-            this.preferênciasToolStripMenuItem,
-            this.cadastroDeFornecedoresToolStripMenuItem});
-            this.arquivoToolStripMenuItem.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.arquivoToolStripMenuItem.Name = "arquivoToolStripMenuItem";
-            this.arquivoToolStripMenuItem.Size = new System.Drawing.Size(90, 32);
-            this.arquivoToolStripMenuItem.Text = "Sistema";
-            // 
-            // optionToolStripMenuItem
-            // 
-            this.optionToolStripMenuItem.Name = "optionToolStripMenuItem";
-            this.optionToolStripMenuItem.Size = new System.Drawing.Size(327, 34);
-            this.optionToolStripMenuItem.Text = "Sair";
-            this.optionToolStripMenuItem.Click += new System.EventHandler(this.optionToolStripMenuItem_Click);
-            // 
-            // toolStripMenuItem1
-            // 
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(324, 6);
-            // 
-            // preferênciasToolStripMenuItem
-            // 
-            this.preferênciasToolStripMenuItem.Name = "preferênciasToolStripMenuItem";
-            this.preferênciasToolStripMenuItem.Size = new System.Drawing.Size(327, 34);
-            this.preferênciasToolStripMenuItem.Text = "Preferências";
-            // 
-            // cadastroDeFornecedoresToolStripMenuItem
-            // 
-            this.cadastroDeFornecedoresToolStripMenuItem.Name = "cadastroDeFornecedoresToolStripMenuItem";
-            this.cadastroDeFornecedoresToolStripMenuItem.Size = new System.Drawing.Size(327, 34);
-            this.cadastroDeFornecedoresToolStripMenuItem.Text = "Cadastro de Fornecedores ";
-            // 
-            // editarToolStripMenuItem
-            // 
-            this.editarToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.optionToolStripMenuItem1,
-            this.permissõesToolStripMenuItem});
-            this.editarToolStripMenuItem.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.editarToolStripMenuItem.Name = "editarToolStripMenuItem";
-            this.editarToolStripMenuItem.Size = new System.Drawing.Size(88, 32);
-            this.editarToolStripMenuItem.Text = "Usuário";
-            // 
-            // optionToolStripMenuItem1
-            // 
-            this.optionToolStripMenuItem1.Name = "optionToolStripMenuItem1";
-            this.optionToolStripMenuItem1.Size = new System.Drawing.Size(216, 34);
-            this.optionToolStripMenuItem1.Text = "Ver matrícula";
-            // 
-            // permissõesToolStripMenuItem
-            // 
-            this.permissõesToolStripMenuItem.Name = "permissõesToolStripMenuItem";
-            this.permissõesToolStripMenuItem.Size = new System.Drawing.Size(216, 34);
-            this.permissõesToolStripMenuItem.Text = "Permissões";
-            // 
-            // exibirToolStripMenuItem
-            // 
-            this.exibirToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.optionToolStripMenuItem2});
-            this.exibirToolStripMenuItem.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.exibirToolStripMenuItem.Name = "exibirToolStripMenuItem";
-            this.exibirToolStripMenuItem.Size = new System.Drawing.Size(74, 32);
-            this.exibirToolStripMenuItem.Text = "Ajuda";
-            // 
-            // optionToolStripMenuItem2
-            // 
-            this.optionToolStripMenuItem2.Name = "optionToolStripMenuItem2";
-            this.optionToolStripMenuItem2.Size = new System.Drawing.Size(177, 34);
-            this.optionToolStripMenuItem2.Text = "Suporte";
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(1094, 71);
+            this.label1.Location = new System.Drawing.Point(1582, 74);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(167, 25);
@@ -270,26 +168,25 @@ namespace interface_wms
             this.label2.Size = new System.Drawing.Size(222, 32);
             this.label2.TabIndex = 3;
             this.label2.Text = "dd/MM/yyyy, 00:00";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.label3.Font = new System.Drawing.Font("Segoe UI Semilight", 10F);
+            this.label3.Font = new System.Drawing.Font("Segoe UI Semilight", 9F);
             this.label3.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.label3.Location = new System.Drawing.Point(568, 46);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(230, 28);
+            this.label3.Size = new System.Drawing.Size(208, 25);
             this.label3.TabIndex = 4;
             this.label3.Text = "FATEC Warehouse System";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // pictureBox2
             // 
             this.pictureBox2.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.pictureBox2.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.ErrorImage")));
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
             this.pictureBox2.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.InitialImage")));
             this.pictureBox2.Location = new System.Drawing.Point(94, 34);
             this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -303,13 +200,13 @@ namespace interface_wms
             // 
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.label4.Font = new System.Drawing.Font("Segoe UI Semilight", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(1604, 66);
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.label4.Location = new System.Drawing.Point(1561, 46);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(180, 38);
+            this.label4.Size = new System.Drawing.Size(188, 32);
             this.label4.TabIndex = 6;
-            this.label4.Text = "Rapid Express";
+            this.label4.Text = "Company Name";
             // 
             // pictureBox3
             // 
@@ -1293,6 +1190,7 @@ namespace interface_wms
             // 
             this.tmrDataHora.Enabled = true;
             this.tmrDataHora.Interval = 1;
+            this.tmrDataHora.Tick += new System.EventHandler(this.tmrDataHora_Tick);
             // 
             // CadastroFornecedores
             // 
@@ -1315,7 +1213,6 @@ namespace interface_wms
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.menu);
             this.Controls.Add(this.pictureBox4);
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MaximumSize = new System.Drawing.Size(1909, 1078);
@@ -1326,8 +1223,6 @@ namespace interface_wms
             this.Activated += new System.EventHandler(this.CadastroFornecedores_Activated);
             this.Load += new System.EventHandler(this.CadastroFornecedores_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.menu.ResumeLayout(false);
-            this.menu.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
@@ -1356,21 +1251,11 @@ namespace interface_wms
         #endregion
 
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.MenuStrip menu;
-        private System.Windows.Forms.ToolStripMenuItem arquivoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem editarToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem exibirToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem optionToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem optionToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem optionToolStripMenuItem2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem preferênciasToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem permissõesToolStripMenuItem;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.PictureBox pictureBox4;
@@ -1400,7 +1285,6 @@ namespace interface_wms
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.Button button10;
-        private System.Windows.Forms.ToolStripMenuItem cadastroDeFornecedoresToolStripMenuItem;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
@@ -1453,8 +1337,6 @@ namespace interface_wms
         private System.Windows.Forms.TextBox textBox_dadosAdicionais1;
         private System.Windows.Forms.ComboBox comboBox_bairro;
         private System.Windows.Forms.ComboBox comboBox_cidade;
-        private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.Timer timer2;
         private System.Windows.Forms.Timer tmrDataHora;
     }
 }

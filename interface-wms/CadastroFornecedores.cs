@@ -444,15 +444,10 @@ namespace interface_wms
         {
             this.Close();
         }
-
-        private void label2_Click(object sender, EventArgs e)
+       
+        private void tmrDataHora_Tick(object sender, EventArgs e)
         {
             label2.Text = DateTime.Now.ToString("dd/MM/yyyy, HH:mm");
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
